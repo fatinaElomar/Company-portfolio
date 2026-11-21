@@ -1,6 +1,6 @@
 import React from 'react';
 import { pricingPlans } from '../data/portfolioData';
-import { Check, Sparkles, ArrowRight } from 'lucide-react';
+import { Check, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
 
 export default function Pricing({ onOpenBooking }) {
   return (
@@ -8,13 +8,13 @@ export default function Pricing({ onOpenBooking }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-300 text-xs font-semibold uppercase tracking-widest mb-3">
-            Investment & Retainers
+            Project Packages & Retainers
           </div>
           <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight mb-4">
-            Transparent Pricing. <span className="text-gold-gradient">Predatory Execution.</span>
+            Curated <span className="text-gold-gradient">Service Packages</span>
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
-            No 12-month lock-in traps. We earn our partnership every 30 days through provable Shopify revenue growth and creative excellence.
+            Choose a dedicated project scope or combine them into an all-in-one package. We provide predictable project timelines and senior-level creative execution.
           </p>
         </div>
 
@@ -28,22 +28,27 @@ export default function Pricing({ onOpenBooking }) {
                   : 'bg-zinc-950 border border-zinc-800 hover:border-gold-500/40'
               }`}
             >
-              {plan.featured && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold-gradient text-black font-bold uppercase tracking-widest text-[11px] px-4 py-1 rounded-full shadow-gold-glow flex items-center gap-1">
+              {plan.badge && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold-gradient text-black font-bold uppercase tracking-widest text-[11px] px-4 py-1 rounded-full shadow-gold-glow flex items-center gap-1 whitespace-nowrap">
                   <Sparkles className="w-3.5 h-3.5" />
                   {plan.badge}
                 </div>
               )}
 
               <div>
-                <h3 className="text-xl font-display font-bold text-white mb-2">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-gold-400 block mb-1">
+                  {plan.projectScope}
+                </span>
+
+                <h3 className="text-2xl font-display font-bold text-white mb-2">
                   {plan.name}
                 </h3>
+                
                 <p className="text-xs text-zinc-400 mb-6 min-h-[36px]">
                   {plan.subtitle}
                 </p>
 
-                <div className="flex items-baseline gap-1 mb-8 pb-6 border-b border-zinc-800">
+                <div className="flex items-baseline gap-1.5 mb-8 pb-6 border-b border-zinc-800">
                   <span className="text-4xl sm:text-5xl font-display font-black text-white text-gold-gradient">
                     {plan.price}
                   </span>
@@ -54,7 +59,7 @@ export default function Pricing({ onOpenBooking }) {
 
                 <div className="space-y-3 mb-8">
                   <div className="text-xs font-mono uppercase tracking-wider text-zinc-300 font-semibold mb-2">
-                    Scope of Work:
+                    Scope of Deliverables:
                   </div>
                   {plan.deliverables.map((item, dIdx) => (
                     <div key={dIdx} className="flex items-start gap-2.5 text-xs text-zinc-300">
@@ -78,7 +83,7 @@ export default function Pricing({ onOpenBooking }) {
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <div className="text-center text-[10px] text-zinc-500 font-mono mt-3">
-                  Custom onboarding within 48 hours
+                  Custom kickoff call within 48 hours
                 </div>
               </div>
             </div>

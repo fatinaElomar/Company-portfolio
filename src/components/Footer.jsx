@@ -1,34 +1,102 @@
-import React from 'react';
-import { ArrowUpRight, Instagram, Linkedin, Twitter, Youtube, Shield, ShoppingBag } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowLeft, Instagram, Linkedin, Twitter, Youtube, MapPin, CheckCircle2, PhoneCall } from 'lucide-react';
 
 export default function Footer({ onOpenBooking }) {
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (newsletterEmail) {
+      setSubscribed(true);
+    }
+  };
+
   return (
-    <footer className="bg-black border-t border-zinc-900 text-zinc-400 text-xs py-16 relative">
+    <footer className="bg-white border-t border-zinc-200 text-zinc-600 text-xs py-16 relative text-right">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-zinc-900">
+        {/* Newsletter / "Stay in the loop" Section (Devancy Inspired in Arabic) */}
+        <div className="mb-14 p-8 sm:p-10 rounded-none bg-zinc-50 border border-zinc-200 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="max-w-lg">
+            <span className="text-[11px] font-mono uppercase tracking-widest text-amber-800 font-bold block mb-1">
+              نشرة ميديا ماينيد التحليلية
+            </span>
+            <h4 className="text-xl sm:text-2xl font-display font-bold text-zinc-950">
+              ابقَ على اطلاع دائم
+            </h4>
+            <p className="text-xs text-zinc-600 mt-1">
+              انضم إلى أكثر من 4,200 من رواد الأعمال وأصحاب المتاجر الذين يتلقون تقريرنا الشهري حول أحدث استراتيجيات تيك توك، رفع تحويلات شوبيفاي، واتجاهات التغليف الفاخر.
+            </p>
+          </div>
+
+          <div className="w-full md:w-auto">
+            {!subscribed ? (
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 w-full sm:w-80">
+                <input
+                  type="email"
+                  required
+                  placeholder="أدخل بريدك الإلكتروني"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  className="px-4 py-3 rounded-full bg-white border border-zinc-300 text-zinc-900 text-xs placeholder-zinc-400 focus:outline-none focus:border-amber-600 flex-1 text-right"
+                />
+                <button
+                  type="submit"
+                  className="px-6 py-3 rounded-full bg-zinc-900 hover:bg-gold-gradient text-white text-xs font-bold transition-all cursor-pointer whitespace-nowrap"
+                >
+                  اشتراك
+                </button>
+              </form>
+            ) : (
+              <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 px-4 py-2.5 rounded-full border border-emerald-200">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <span>أهلاً بك! تم تسجيل اشتراكك بنجاح.</span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Links Grid in Arabic */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-zinc-200">
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-gold-300 via-gold-500 to-amber-700 p-[1px] shadow-gold-glow">
-                <div className="w-full h-full bg-black rounded-[10px] flex items-center justify-center">
-                  <span className="font-display font-black text-lg text-gold-400">M</span>
+              <div className="w-9 h-9 rounded-none bg-gradient-to-br from-gold-400 via-amber-500 to-amber-700 p-[1px]">
+                <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
+                  <span className="font-display font-black text-lg text-zinc-950">M</span>
                 </div>
               </div>
-              <span className="font-display font-extrabold text-lg tracking-[0.2em] text-white">
-                MEDIA <span className="text-gold-400">MINED</span>
+              <span className="font-display font-extrabold text-lg tracking-wider text-zinc-950">
+                MEDIA <span className="text-gold-gradient">MINED</span>
               </span>
             </div>
 
-            <p className="text-zinc-400 text-xs sm:text-sm max-w-sm leading-relaxed">
-              The premier social media acquisition & bespoke Shopify growth partner. We engineer viral brand discovery and turn high-intent traffic into 7 and 8-figure e-commerce empires.
+            <p className="text-zinc-600 text-xs sm:text-sm max-w-sm leading-relaxed">
+              وكالة رائدة متخصصة في إدارة صفحات السوشيال ميديا للشركات، الهوية البصرية الفاخرة، تصميم التغليف والعلب، وبناء وتطوير متاجر شوبيفاي التي تضاعف أرباحك الصافية.
             </p>
+
+            {/* Dual Location Badges: Lebanon & UAE */}
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-[11px] text-zinc-700 font-semibold">
+                <MapPin className="w-3.5 h-3.5 text-amber-600" />
+                <span className="font-bold text-zinc-900">دبي، الإمارات</span>
+                <span className="text-zinc-400">•</span>
+                <span className="text-zinc-600">مركز الأعمال والتوسع التجاري</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-[11px] text-zinc-700 font-semibold">
+                <MapPin className="w-3.5 h-3.5 text-amber-600" />
+                <span className="font-bold text-zinc-900">بيروت، لبنان</span>
+                <span className="text-zinc-400">•</span>
+                <span className="text-zinc-600">استوديو الإنتاج الفني وتصاميم الهوية</span>
+              </div>
+            </div>
 
             <div className="flex items-center gap-3 pt-2">
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:border-gold-500/50 hover:text-gold-400 transition-colors"
+                className="w-9 h-9 rounded-lg bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:border-gold-500 hover:text-amber-800 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -37,7 +105,7 @@ export default function Footer({ onOpenBooking }) {
                 href="https://tiktok.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:border-gold-500/50 hover:text-gold-400 transition-colors"
+                className="w-9 h-9 rounded-lg bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:border-gold-500 hover:text-amber-800 transition-colors"
                 aria-label="TikTok"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -48,7 +116,7 @@ export default function Footer({ onOpenBooking }) {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:border-gold-500/50 hover:text-gold-400 transition-colors"
+                className="w-9 h-9 rounded-lg bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:border-gold-500 hover:text-amber-800 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -57,7 +125,7 @@ export default function Footer({ onOpenBooking }) {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:border-gold-500/50 hover:text-gold-400 transition-colors"
+                className="w-9 h-9 rounded-lg bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:border-gold-500 hover:text-amber-800 transition-colors"
                 aria-label="X (Twitter)"
               >
                 <Twitter className="w-4 h-4" />
@@ -66,7 +134,7 @@ export default function Footer({ onOpenBooking }) {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:border-gold-500/50 hover:text-gold-400 transition-colors"
+                className="w-9 h-9 rounded-lg bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:border-gold-500 hover:text-amber-800 transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="w-4 h-4" />
@@ -74,49 +142,64 @@ export default function Footer({ onOpenBooking }) {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Project Pillars */}
           <div>
-            <h4 className="text-white font-mono uppercase tracking-wider text-xs mb-4 font-bold">
-              Capabilities
+            <h4 className="text-zinc-950 font-bold text-xs mb-4">
+              مجالات العمل
             </h4>
             <ul className="space-y-2.5">
-              <li><a href="#services" className="hover:text-gold-400 transition-colors">Shopify 2.0 CRO</a></li>
-              <li><a href="#services" className="hover:text-gold-400 transition-colors">TikTok & Reels Video</a></li>
-              <li><a href="#services" className="hover:text-gold-400 transition-colors">High-ROAS Meta Ads</a></li>
-              <li><a href="#services" className="hover:text-gold-400 transition-colors">Creator Seeding Engine</a></li>
-              <li><a href="#services" className="hover:text-gold-400 transition-colors">Klaviyo SMS & Email</a></li>
+              <li><a href="#services" className="hover:text-amber-800 transition-colors">إدارة صفحات السوشيال ميديا</a></li>
+              <li><a href="#services" className="hover:text-amber-800 transition-colors">الهوية البصرية والبراندنج الفاخر</a></li>
+              <li><a href="#services" className="hover:text-amber-800 transition-colors">تصميم التغليف والعلب الملكية</a></li>
+              <li><a href="#services" className="hover:text-amber-800 transition-colors">تطوير متاجر شوبيفاي والمواقع</a></li>
+              <li><a href="#case-studies" className="hover:text-amber-800 transition-colors">الباقات الشاملة للشركات</a></li>
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Navigation & Tools */}
           <div>
-            <h4 className="text-white font-mono uppercase tracking-wider text-xs mb-4 font-bold">
-              Tools & Proof
+            <h4 className="text-zinc-950 font-bold text-xs mb-4">
+              أقسام الموقع
             </h4>
             <ul className="space-y-2.5">
-              <li><a href="#audit" className="hover:text-gold-400 transition-colors">Instant Store Auditor</a></li>
-              <li><a href="#calculator" className="hover:text-gold-400 transition-colors">Shopify ROI Calculator</a></li>
-              <li><a href="#case-studies" className="hover:text-gold-400 transition-colors">Client Case Studies</a></li>
-              <li><a href="#testimonials" className="hover:text-gold-400 transition-colors">Verified Testimonials</a></li>
-              <li><a href="#pricing" className="hover:text-gold-400 transition-colors">Investment Tiers</a></li>
+              <li><a href="#case-studies" className="hover:text-amber-800 transition-colors">سجل الأعمال والمشاريع</a></li>
+              <li><a href="#why-us" className="hover:text-amber-800 transition-colors">لماذا ميديا ماينيد؟</a></li>
+              <li><a href="#reach" className="hover:text-amber-800 transition-colors">نطاق انتشارنا (لبنان والإمارات)</a></li>
+              <li><a href="#testimonials" className="hover:text-amber-800 transition-colors">شهادات أصحاب الشركات</a></li>
+              <li><a href="#faq" className="hover:text-amber-800 transition-colors">الأسئلة الشائعة</a></li>
             </ul>
           </div>
 
-          {/* Partnership & Location */}
+          {/* Regional Hubs & Inquiries */}
           <div>
-            <h4 className="text-white font-mono uppercase tracking-wider text-xs mb-4 font-bold">
-              Headquarters
+            <h4 className="text-zinc-950 font-bold text-xs mb-4">
+              فروع واستوديوهات الوكالة
             </h4>
-            <div className="space-y-2">
-              <p className="text-zinc-300">Media Mined Global Agency</p>
-              <p className="text-zinc-500">Dedicated E-Commerce Scaling Hub</p>
+            <div className="space-y-3">
+              <div>
+                <p className="text-zinc-900 font-bold flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5 text-amber-600" />
+                  الإمارات العربية المتحدة
+                </p>
+                <p className="text-zinc-500 text-[11px]">داون تاون دبي / الخليج التجاري</p>
+              </div>
+
+              <div>
+                <p className="text-zinc-900 font-bold flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5 text-amber-600" />
+                  لبنان
+                </p>
+                <p className="text-zinc-500 text-[11px]">بيروت سنترال / استوديو التصوير والتصميم</p>
+              </div>
+
               <div className="pt-2">
                 <button
                   onClick={onOpenBooking}
-                  className="inline-flex items-center gap-1.5 text-gold-400 hover:text-gold-300 font-semibold"
+                  className="inline-flex items-center gap-1.5 text-amber-800 hover:text-amber-950 font-bold cursor-pointer"
                 >
-                  <span>Book Private Consultation</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  <PhoneCall className="w-3.5 h-3.5 text-amber-600" />
+                  <span>احجز مكالمة استشارية</span>
+                  <ArrowLeft className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
@@ -124,14 +207,14 @@ export default function Footer({ onOpenBooking }) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500 font-medium">
           <div>
-            © {new Date().getFullYear()} Media Mined Agency. All rights reserved.
+            © {new Date().getFullYear()} وكالة ميديا ماينيد (Media Mined) • بيروت ودبي. جميع الحقوق محفوظة.
           </div>
           <div className="flex items-center gap-6">
-            <span className="hover:text-zinc-400 transition-colors cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-zinc-400 transition-colors cursor-pointer">Terms of Service</span>
-            <span className="hover:text-zinc-400 transition-colors cursor-pointer">Shopify Merchant Agreement</span>
+            <span className="hover:text-zinc-700 transition-colors cursor-pointer">سياسة الخصوصية</span>
+            <span className="hover:text-zinc-700 transition-colors cursor-pointer">الشروط والأحكام</span>
+            <span className="hover:text-zinc-700 transition-colors cursor-pointer">اتفاقية تقديم الخدمات</span>
           </div>
         </div>
       </div>

@@ -3,53 +3,60 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    background-color: #070707;
-    color: #F8FAFC;
+  html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #121214;
+    overflow-x: hidden;
+    font-family: 'Cairo', system-ui, sans-serif;
+    line-height: 1.6;
+    letter-spacing: normal;
+  }
+
+  /* Prevent awkward word breaking in Arabic */
+  h1, h2, h3, h4, h5, h6 {
+    word-break: normal;
+    overflow-wrap: break-word;
+    line-height: 1.35;
+  }
+
+  /* Remove all shadows as requested */
+  *, ::before, ::after {
+    box-shadow: none !important;
   }
 }
 
-/* Custom Scrollbar in Dark & Gold */
+/* Custom Scrollbar in Minimalist Sharp Gold */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d0d0d;
+  background: #F4F4F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #332608;
-  border-radius: 4px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-::-webkit-scrollbar-thumb:hover {
   background: #D4AF37;
 }
 
-/* Gold Gradient Utilities */
+/* Hide scrollbar for clean horizontal swiping on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Luxury Metallic Gold Text Gradient */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #FFF1CA 0%, #D4AF37 50%, #AA820A 100%);
+  background: linear-gradient(135deg, #8C6408 0%, #C59B27 50%, #8C6408 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.text-gold-bright {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F5D77F 40%, #D4AF37 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.border-gold-gradient {
-  border-image: linear-gradient(to right, rgba(212, 175, 55, 0.6), rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.6)) 1;
-}
-
-.gold-glow {
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
-}
-
-.gold-glow-hover:hover {
-  box-shadow: 0 0 35px rgba(212, 175, 55, 0.45);
 }

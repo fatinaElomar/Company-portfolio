@@ -2,42 +2,47 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import StatsTicker from './components/StatsTicker';
+import ClientLogos from './components/ClientLogos';
 import Services from './components/Services';
+import WhyUs from './components/WhyUs';
+import OurReach from './components/OurReach';
 import CaseStudies from './components/CaseStudies';
-import StoreAuditor from './components/StoreAuditor';
-import RoiCalculator from './components/RoiCalculator';
 import Process from './components/Process';
 import Testimonials from './components/Testimonials';
-import Pricing from './components/Pricing';
-import ContactModal from './components/ContactModal';
+import Faq from './components/Faq';
 import Footer from './components/Footer';
+import ContactModal from './components/ContactModal';
+import WhatsAppWidget from './components/WhatsAppWidget';
 
 export default function App() {
   const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#080808] text-white selection:bg-gold-500 selection:text-black">
+    <div className="min-h-screen bg-[#FAFAFA] text-zinc-900 selection:bg-gold-500 selection:text-white">
       {/* Top Navbar */}
       <Navbar onOpenBooking={() => setBookingOpen(true)} />
 
       <main>
-        {/* Hero with interactive Shopify dashboard preview */}
+        {/* Hero Section */}
         <Hero onOpenBooking={() => setBookingOpen(true)} />
 
         {/* Live Partner & Impact Ticker */}
         <StatsTicker />
 
-        {/* Core Services: Shopify CRO, Social Media Viral, Creator Engine, Paid Ads */}
+        {/* Client Logos Grid */}
+        <ClientLogos />
+
+        {/* Core Services: Social Media, Branding, Packaging, Websites */}
         <Services onOpenBooking={() => setBookingOpen(true)} />
 
-        {/* Case Studies & Metrics Showcase */}
+        {/* Why Us? (Devancy Inspired Standard) */}
+        <WhyUs onOpenBooking={() => setBookingOpen(true)} />
+
+        {/* Our Reach (Devancy Inspired: UAE, Lebanon, KSA, UK, USA) */}
+        <OurReach onOpenBooking={() => setBookingOpen(true)} />
+
+        {/* Featured Projects & High-Resolution Image Galleries */}
         <CaseStudies onOpenBooking={() => setBookingOpen(true)} />
-
-        {/* Interactive Shopify & Social Media Diagnostic Tool */}
-        <StoreAuditor onOpenBooking={() => setBookingOpen(true)} />
-
-        {/* Interactive ROI & Revenue Slider */}
-        <RoiCalculator onOpenBooking={() => setBookingOpen(true)} />
 
         {/* The 4-step Media Mined Growth Blueprint */}
         <Process onOpenBooking={() => setBookingOpen(true)} />
@@ -45,14 +50,17 @@ export default function App() {
         {/* Client Reviews & Proof */}
         <Testimonials />
 
-        {/* Transparent Investment Retainers */}
-        <Pricing onOpenBooking={() => setBookingOpen(true)} />
+        {/* Frequently Asked Questions (Devancy Inspired) */}
+        <Faq />
       </main>
 
-      {/* Footer */}
+      {/* Footer with "Stay in the loop" newsletter */}
       <Footer onOpenBooking={() => setBookingOpen(true)} />
 
-      {/* Booking / Strategy Call Modal */}
+      {/* Floating WhatsApp Contact Button */}
+      <WhatsAppWidget />
+
+      {/* Booking / Project Inquiry Modal */}
       <ContactModal
         isOpen={bookingOpen}
         onClose={() => setBookingOpen(false)}

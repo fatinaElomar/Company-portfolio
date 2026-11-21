@@ -1,236 +1,319 @@
-export const caseStudies = [
+export const projectPillars = [
   {
-    id: 1,
-    title: "Aura Luxe Jewelry",
-    category: "Shopify Plus & TikTok Ads",
-    tag: "E-Commerce / Luxury",
-    heroImage: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1200&auto=format&fit=crop",
-    revenue: "$1.85M",
-    growth: "+420%",
-    roas: "4.8x ROAS",
-    timeline: "90 Days",
-    summary: "Re-engineered their Shopify Plus storefront for sub-second load times, built a viral TikTok UGC pipeline, and implemented bespoke bundles that raised Average Order Value (AOV) by 54%.",
-    challenge: "High cart abandonment (78%) and stagnant Meta ROAS below 1.5x.",
-    solution: "Custom Headless-feel Shopify 2.0 architecture, 1-click upsell checkout, and high-frequency TikTok creator seeding.",
-    results: [
-      { label: "Monthly Revenue", value: "$620K/mo" },
-      { label: "Blended ROAS", value: "4.8x" },
-      { label: "Conversion Rate", value: "4.35% (+180%)" },
-      { label: "AOV Increase", value: "+54%" }
+    id: "social-media",
+    title: "إدارة صفحات السوشيال ميديا للشركات",
+    subtitle: "إدارة شاملة ومتكاملة لحسابات إنستغرام، تيك توك وفيسبوك",
+    icon: "Share2",
+    badge: "إدارة متكاملة من الألف إلى الياء",
+    description: "من كتابة السيناريو وإنتاج الفيديوهات القصيرة (Reels & TikToks) ذات الخطافات القوية، إلى التصميم الإبداعي، جدولة النشر اليومية، وإدارة التعليقات والرسائل لتحويل المتابعين إلى مشترين فعليين.",
+    deliverables: [
+      "روزنامة محتوى شهرية واستراتيجية نشر يومية",
+      "تصوير ومونتاج 25-35 فيديو ريلز وتيك توك احترافي شهرياً",
+      "تنسيق شكل الحساب وتصميم الستوريات اليومية الجذابة",
+      "إدارة التفاعل والرد الفوري على رسائل العملاء (DMs)",
+      "استهداف أحدث التريندات والصوتيات الرائجة والخوارزميات",
+      "تقارير شهرية مفصلة عن نمو المتابعين ومعدلات المبيعات"
     ],
-    tags: ["Shopify 2.0", "TikTok Ads", "UGC Creative", "Email/SMS Flows"]
+    timeline: "عقد شهري مستمر / ريتينر"
   },
   {
-    id: 2,
-    title: "Veloce Activewear",
-    category: "Full Social Funnel & CRO",
-    tag: "Athleisure / Apparel",
-    heroImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop",
-    revenue: "$3.4M",
-    growth: "+310%",
-    roas: "5.2x ROAS",
-    timeline: "6 Months",
-    summary: "Scaled a fitness apparel brand across Instagram Reels, TikTok Shop, and an ultra-minimalist, high-converting Shopify store with seamless swatch selections and instant checkout.",
-    challenge: "Low organic reach and ad fatigue draining profit margins.",
-    solution: "Created daily viral video formats reaching 12M+ views organically, paired with hyper-targeted retargeting funnels.",
-    results: [
-      { label: "Total Revenue Generated", value: "$3.4M" },
-      { label: "Organic Impressions", value: "48M+" },
-      { label: "Repeat Customer Rate", value: "44%" },
-      { label: "CAC Reduction", value: "-38%" }
+    id: "branding",
+    title: "الهوية البصرية والبراندنج الفاخر",
+    subtitle: "بناء علامة تجارية مميزة تفرض أسعاراً استثنائية وثقة فورية",
+    icon: "Palette",
+    badge: "تميز إبداعي وبصري",
+    description: "نبتكر هويات بصرية لا تُنسى. من حزم الشعارات الفاخرة والخطوط الطباعية المخصصة، إلى كتيب إرشادات العلامة الكامل (Brand Guidelines) وتناغم الألوان ونبرة الخطاب التي تمنح براندك هيبة السوق.",
+    deliverables: [
+      "دليل شامل للهوية البصرية (الخطوط، الألوان، والقواعد)",
+      "حزمة شعارات متكاملة (رئيسي، فرعي، ومونوغرام مصغر)",
+      "قوالب سوشيال ميديا جاهزة وملفات تسويقية احترافية",
+      "ريندرات ثلاثية الأبعاد واقعية للمنتجات (3D Renders)",
+      "صياغة قصة البراند ونبرة الصوت وموقعها التنافسي",
+      "مكتبة الأصول الرقمية وملفات الفيكتور بجودة الطباعة"
     ],
-    tags: ["Shopify CRO", "Instagram Growth", "TikTok Shop", "Klaviyo"]
+    timeline: "من 2 إلى 4 أسابيع للمشروع"
   },
   {
-    id: 3,
-    title: "Botanica Glow Skincare",
-    category: "Shopify Storefront & Viral Seeding",
-    tag: "Beauty & Wellness",
-    heroImage: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
-    revenue: "$940K",
-    growth: "+580%",
-    roas: "6.1x ROAS",
-    timeline: "60 Days",
-    summary: "Built an aesthetically seductive Shopify storefront from scratch, seeded 200+ aesthetic skincare creators, and sold out 3 production runs back-to-back.",
-    challenge: "Brand-new brand launching into a hyper-competitive beauty market with zero audience.",
-    solution: "Bespoke clean Shopify theme with sticky add-to-cart, dermatological proof badges, and micro-influencer gifting blitz.",
-    results: [
-      { label: "Units Sold", value: "35,000+" },
-      { label: "Launch Month Sales", value: "$320,000" },
-      { label: "Email Capture Rate", value: "14.2%" },
-      { label: "ROAS Peak", value: "6.1x" }
+    id: "packaging",
+    title: "تصميم التغليف والعلب وتجربة الـ Unboxing",
+    subtitle: "تحويل المنتجات المادية إلى تجارب فتح علب تنتشر فيروسياً",
+    icon: "Boxes",
+    badge: "تصميم المنتجات والتغليف المادي",
+    description: "نصمم صناديق الشحن الفاخرة، العلب المقواة بختم الذهب الحراري (Gold Foil)، والأكياس واللصاقات المصممة خصيصاً لتحفيز العملاء على تصوير تجربة فتح الصندوق ومشاركتها على السوشيال ميديا.",
+    deliverables: [
+      "تصميم قوالب العلب المخصصة هندسياً (Custom Die-Cuts)",
+      "مواصفات الفويل الذهبي، البروز، ولمسات الـ UV الفاخرة",
+      "تصميم لصاقات الزجاجات والعبوات والأكياس بدقة متناهية",
+      "تصميم كروت الشكر وبطاقات الضمان وتجربة العميل",
+      "ريندرات 3D تحاكي المنتج الحقيقي قبل بدء التصنيع",
+      "ملفات تنفيذية جاهزة للمطابع ومصانع التغليف عالمياً"
     ],
-    tags: ["New Store Launch", "Creator Blitz", "UGC Video", "Shopify Speed"]
+    timeline: "من 3 إلى 4 أسابيع للمشروع"
   },
   {
-    id: 4,
-    title: "Krown Streetwear & Kicks",
-    category: "Limited Drops & Discord/TikTok",
-    tag: "Footwear & Streetwear",
-    heroImage: "https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=1200&auto=format&fit=crop",
-    revenue: "$1.12M",
-    growth: "+245%",
-    roas: "4.4x ROAS",
-    timeline: "45 Days",
-    summary: "Engineered high-tension product drop mechanics on Shopify, driving 18,000 concurrent buyers during release windows hyped through TikTok and Instagram countdowns.",
-    challenge: "Site crashes during high-traffic drops and bot scalpers frustrating genuine buyers.",
-    solution: "High-capacity server configuration, anti-bot checkout queue, and cinematic video storytelling.",
-    results: [
-      { label: "Drop Day Sellout", value: "8 Minutes" },
-      { label: "Waitlist Generated", value: "62,000 emails" },
-      { label: "Store Uptime", value: "99.99%" },
-      { label: "Gross Margin", value: "71%" }
+    id: "websites",
+    title: "تطوير متاجر شوبيفاي والمواقع الإلكترونية",
+    subtitle: "واجهات رقمية فائقة السرعة مبنية لرفع المبيعات ومضاعفة الأرباح",
+    icon: "Layout",
+    badge: "تطوير Shopify 2.0 الاحترافي",
+    description: "سواء كنت بحاجة إلى متجر شوبيفاي إلكتروني بميزة الدفع بضغطة واحدة وزيادة قيمة السلة، أو موقع تعريفي للشركة فائق الأناقة — نحن نبرمج واجهات سريعة مصممة خصيصاً لمستخدمي الهاتف.",
+    deliverables: [
+      "برمجة وتصميم شوبيفاي 2.0 مخصص فائق السرعة",
+      "صفحات هبوط (Landing Pages) مخصصة للحملات الإعلانية",
+      "سرعة تصفح وتحميل فورية على الهاتف لتفادي فقدان الزوار",
+      "نظام الحزم الذكية (Bundles) والشراء بضغطة زر واحدة",
+      "ربط آمن لبوابات الدفع (تاب، هايبرباي، سترايب) وشركات الشحن",
+      "إعداد وتتبع بكسل الإعلانات (Meta, TikTok) والـ SEO"
     ],
-    tags: ["Drop Mechanics", "Bot Protection", "Viral Teasers", "Community"]
+    timeline: "من 3 إلى 5 أسابيع للمشروع"
   }
 ];
 
-export const services = [
+export const caseStudies = [
   {
-    icon: "ShoppingBag",
-    title: "Shopify Store Architecture & CRO",
-    badge: "E-Commerce Core",
-    description: "Bespoke Shopify & Shopify Plus design and optimization engineered for one sole purpose: converting cold social media traffic into high-paying, recurring buyers.",
-    deliverables: [
-      "Custom Theme Development (OS 2.0)",
-      "Mobile-First Sub-Second Speed Optimization",
-      "Dynamic 1-Click Upsells & AOV Multipliers",
-      "Conversion Rate Optimization (A/B Testing)"
-    ]
+    id: 1,
+    title: "مجوهرات أورا لوكس الفاخرة",
+    client: "Aura Luxe Fine Jewelry",
+    category: "متاجر شوبيفاي بلس وإعادة إطلاق الهوية",
+    projectType: "websites",
+    tag: "شوبيفاي بلس + هوية فاخرة",
+    heroImage: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800&auto=format&fit=crop"
+    ],
+    revenue: "1.85 مليون دولار",
+    growth: "+420%",
+    roas: "4.8x ROAS",
+    timeline: "60 يوماً",
+    summary: "إعادة بناء متجر Shopify Plus بتصميم فاخر مستوحى من درجات الأسود والذهب، مع سرعة تصفح فائقة ونظام شراء سريع لمجموعات الألماس والمجوهرات الفاخرة.",
+    challenge: "موقع قديم بطيء مع نسبة ترك سلة تسوق بلغت 78% وتجربة مستخدم غير ملائمة للمنتجات ذات القيمة المرتفعة.",
+    solution: "تصميم شوبيفاي 2.0 مخصص بالكامل، تسهيل خطوة الدفع على الهاتف، وتفعيل عروض الشراء الإضافي التلقائي.",
+    results: [
+      { label: "إجمالي المبيعات", value: "1.85M$" },
+      { label: "معدل التحويل", value: "4.35% (+180%)" },
+      { label: "متوسط قيمة الطلب", value: "+54%" },
+      { label: "سرعة الموقع", value: "98/100" }
+    ],
+    tags: ["Shopify Plus", "تصميم مواقع فاخرة", "تحسين التحويل", "عروض الحزم"]
   },
   {
-    icon: "Video",
-    title: "Viral Social Media Production",
-    badge: "Organic & Viral",
-    description: "We produce high-impact, scroll-stopping video content crafted specifically for TikTok, Instagram Reels, and YouTube Shorts that builds obsession around your products.",
-    deliverables: [
-      "Hook-Driven Short-Form Video Production",
-      "Trend Capitalization & Algorithmic Audio",
-      "Full Social Account Management & Curation",
-      "Brand Aesthetic Curation & Feed Styling"
-    ]
+    id: 2,
+    title: "فيلوتشي للملابس الرياضية",
+    client: "Veloce Athleisure",
+    category: "إدارة صفحات السوشيال ميديا بالكامل",
+    projectType: "social-media",
+    tag: "إدارة سوشيال ميديا مستمرة",
+    heroImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=800&auto=format&fit=crop"
+    ],
+    revenue: "14.8M مشاهدة",
+    growth: "+310%",
+    roas: "45k متابع شهرياً",
+    timeline: "إدارة شهرية مستمرة",
+    summary: "استلمنا إدارة حساباتهم على تيك توك وإنستغرام. قمنا بإنتاج وتصوير 35+ فيديو ريلز شهرياً حققت ملايين المشاهدات المجانية وأحدثت نقلة نوعية في مبيعات المتجر.",
+    challenge: "حسابات راكدة بدون تفاعل، نشر عشوائي متقطع، وتكلفة إعلانية مرتفعة دون تحقيق عائد مقنع.",
+    solution: "خطة يومية محكمة: فيديوهات ريلز تعتمد على خطافات بصرية قوية، استغلال التريندات، وتوجيه المتابعين للشراء عبر الرسائل الخاصة.",
+    results: [
+      { label: "المشاهدات المجانية", value: "14.8M مشاهدة" },
+      { label: "متابعون جدد", value: "+125,000" },
+      { label: "مبيعات الرسائل المباشرة", value: "340,000$" },
+      { label: "معدل التفاعل", value: "8.6%" }
+    ],
+    tags: ["إدارة حسابات", "فيديوهات ريلز وتيك توك", "انتشار فيروزي", "تفاعل يومي"]
   },
   {
-    icon: "TrendingUp",
-    title: "High-ROAS Paid Social Acquisition",
-    badge: "Scale Machine",
-    description: "Precision-targeted paid advertising across Meta (Instagram/Facebook), TikTok Ads, and Pinterest Ads built on creative testing matrices and mathematical efficiency.",
-    deliverables: [
-      "Creative Fatigue-Resistant Ad Sprinting",
-      "Full-Funnel Pixel & CAPI Server Tracking",
-      "Audience Segmentation & Lookalike Engines",
-      "Weekly Transparent Reporting & ROAS Audits"
-    ]
+    id: 3,
+    title: "عطور سولستيس الباريسية الفاخرة",
+    client: "Solstice Haute Parfums",
+    category: "تصميم الهوية والعلب الفاخرة",
+    projectType: "packaging",
+    tag: "تصميم علب وتغليف ملكي",
+    heroImage: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=800&auto=format&fit=crop"
+    ],
+    revenue: "920,000 دولار",
+    growth: "+340%",
+    roas: "نفدت الكمية 4 مرات",
+    timeline: "4 أسابيع",
+    summary: "تصميم العلب الكرتونية المغناطيسية مع دمغ الذهب الحراري (Gold Foil)، بطانات مخملية داخلية، لصاقات الزجاجات، وريندرات 3D لدار عطور فاخرة.",
+    challenge: "عطور ذات جودة نيش استثنائية ولكن بتغليف عادي متواضع لا يبرر بيع الزجاجة بسعر 280 دولاراً.",
+    solution: "ابتكار علب صلبة سوداء غير لامعة مع رقائق الذهب الإيطالي، ورق محكم الملمس، وتجربة فتح ساحرة.",
+    results: [
+      { label: "سعر الزجاجة في السوق", value: "280$ / قطعة" },
+      { label: "فيديوهات فتح العلبة", value: "+3,800 فيديو" },
+      { label: "متاجر بيع بالتجزئة", value: "14 بوتيكاً" },
+      { label: "مبيعات الإطلاق الأول", value: "920,000$" }
+    ],
+    tags: ["تصميم تغليف", "علب فويل ذهبي", "تجربة Unboxing", "ريندرات 3D"]
   },
   {
-    icon: "Sparkles",
-    title: "UGC & Influencer Seeding Machine",
-    badge: "Social Proof",
-    description: "Access our private network of 2,500+ vetted e-commerce creators and micro-influencers ready to film authentic unboxings, testimonials, and aesthetic lifestyle content.",
-    deliverables: [
-      "Creator Gifting & Product Seeding At Scale",
-      "Full Usage Rights for Paid Whitelisting",
-      "Direct TikTok Shop Affiliate Recruitment",
-      "High-Converting Unboxing & Review Formats"
-    ]
+    id: 4,
+    title: "بوتانيكا جلو لمستحضرات التجميل",
+    client: "Botanica Glow Labs",
+    category: "الهوية البصرية وتصميم المنتجات",
+    projectType: "branding",
+    tag: "هوية بصرية ودليل متكامل",
+    heroImage: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1608248597359-07f90c4273df?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop"
+    ],
+    revenue: "35,000 قطعة",
+    growth: "+580%",
+    roas: "بيع كامل للدفعة",
+    timeline: "3 أسابيع",
+    summary: "بناء الهوية البصرية المتكاملة: شعار مصمم بالنسب الذهبية، خطوط طباعية أنيقة، قوالب سوشيال ميديا، ودليل متكامل للمنتجات الطبية التجميلية.",
+    challenge: "تركيبة علمية ممتازة للعناية بالبشرة ولكن بدون أي هوية بصرية مما تسبب في ضعف ثقة المستهلك.",
+    solution: "هوية بصرية فاخرة تجمع بين المصداقية الطبية وأناقة دور التجميل العالمية لفرض الثقة الفورية.",
+    results: [
+      { label: "القطع المباعة", value: "35,000+ عبوة" },
+      { label: "مخرجات التصميم", value: "دليل الهوية الكامل" },
+      { label: "ثقة وتقييم العملاء", value: "98.2% إيجابي" },
+      { label: "متابعو السوشيال ميديا", value: "+80k متابع" }
+    ],
+    tags: ["هوية بصرية", "شعار مخصص", "دليل البراند", "خطوط فاخرة"]
   },
   {
-    icon: "Repeat",
-    title: "Retention, Email & SMS Engines",
-    badge: "LTV Maximizer",
-    description: "Turn one-time shoppers into lifelong brand evangelists with automated Klaviyo email & SMS flows that reliably generate 30%+ of your store's total gross revenue.",
-    deliverables: [
-      "High-Converting Welcome & Abandonment Flows",
-      "VIP Loyalty Programs & Tiered Perks",
-      "SMS Flash Sale & Back-in-Stock Campaigns",
-      "Post-Purchase Review & Cross-Sell Loops"
-    ]
+    id: 5,
+    title: "نورديك هايفن للمفروشات والديكور",
+    client: "Nordic Haven Living",
+    category: "تطوير متجر شوبيفاي 2.0 للمفروشات",
+    projectType: "websites",
+    tag: "متجر شوبيفاي 2.0 متطور",
+    heroImage: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop"
+    ],
+    revenue: "2.4 مليون دولار",
+    growth: "+290%",
+    roas: "5.1x ROAS",
+    timeline: "5 أسابيع",
+    summary: "برمجة متجر شوبيفاي اسكندنافي بسيط فائق السرعة، مع ميزة معاينة الأثاث في الغرف بتقنية 3D، حساب الشحن التلقائي، ودعم العملات الخليجية والدولية.",
+    challenge: "ارتفاع نسبة إلغاء الطلبات بسبب تعقيدات أسعار شحن الأثاث وبطء تحميل صور المنتجات الكبيرة.",
+    solution: "ضغط الصور الذكي مع الحفاظ على دقتها، دمج حاسبة شحن واضحة عند الدفع، وبناء غرف مفروشة متكاملة كحزمة واحدة.",
+    results: [
+      { label: "المبيعات الإجمالية", value: "2.4M$" },
+      { label: "متوسط قيمة السلة", value: "640$" },
+      { label: "انخفاض معدل الارتداد", value: "-42%" },
+      { label: "سرعة الدفع على الهاتف", value: "12 ثانية" }
+    ],
+    tags: ["متجر أثاث", "شوبيفاي بلس", "معاينة 3D", "دعم العملات"]
   },
   {
-    icon: "ShieldCheck",
-    title: "Shopify App & Tech Stack Integration",
-    badge: "Technical Rigor",
-    description: "Seamlessly integrate your CRM, inventory management, multi-currency checkouts, subscriptions (Recharge), and analytics into a unified commerce engine.",
-    deliverables: [
-      "Recharge / Skio Subscription Setups",
-      "Multi-Currency & Global Expansion",
-      "TripleWhale / Northbeam Attribution Sync",
-      "Custom Private Shopify App Solutions"
-    ]
+    id: 6,
+    title: "ماتشا كيوتو سيريموني",
+    client: "Kyoto Matcha Club",
+    category: "إدارة السوشيال ميديا وتيك توك شوب",
+    projectType: "social-media",
+    tag: "ريلز وسوشيال كوميرس",
+    heroImage: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?q=80&w=800&auto=format&fit=crop"
+    ],
+    revenue: "28.5M مشاهدة",
+    growth: "+480%",
+    roas: "120k متابع",
+    timeline: "إدارة شهرية مستمرة",
+    summary: "تحويل حساباتهم إلى ظاهرة فيروسية عبر فيديوهات تحضير الماتشا بصوت مريح (ASMR)، وصفات الصباح الجمالية، والربط المباشر مع تيك توك شوب.",
+    challenge: "سوق شاي وماتشا مزدحم بالمنافسين مع انعدام الانتشار المجاني وارتفاع تكلفة الاستحواذ على العميل.",
+    solution: "صيغة فيديوهات ASMR البصرية، أسئلة تفاعلية يومية على الستوري، وشراكات إهداء مع صانعي المحتوى.",
+    results: [
+      { label: "المشاهدات الكلية", value: "28.5 مليون" },
+      { label: "مبيعات TikTok Shop", value: "480,000$" },
+      { label: "نمو الحساب", value: "+120,000 متابع" },
+      { label: "إشارات للبراند", value: "18,000+ فيديو" }
+    ],
+    tags: ["TikTok Viral", "إدارة ريلز", "إنتاج ASMR", "تجارة السوشيال"]
+  },
+  {
+    id: 7,
+    title: "نظارات فيسبر أتيليه ميلانو",
+    client: "Vesper Atelier Milano",
+    category: "تصميم التغليف والعلب الجلدية الفاخرة",
+    projectType: "packaging",
+    tag: "علب جلدية ونظارات فاخرة",
+    heroImage: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1508296695146-257a814070b4?q=80&w=800&auto=format&fit=crop"
+    ],
+    revenue: "780,000 دولار",
+    growth: "+210%",
+    roas: "4.4x ROAS",
+    timeline: "4 أسابيع",
+    summary: "تصميم علب نظارات شمسية جلدية إيطالية قابلة للطي، علب كرتونية صلبة بدمغ الذهب، أقمشة تنظيف مايكروفايبر بمونوغرام بارز، وبطاقات الأصالة.",
+    challenge: "نظارات شمسية فاخرة تُشحن في أكياس بلاستيكية رخيصة مما قلل من قيمتها في نظر المشتري.",
+    solution: "علب جلدية فاخرة قابلة للطي مغناطيسياً، مع علب تقديم مطفأة اللمعة بدمغ الشعار بالذهب، وبطاقة الرقم التسلسلي.",
+    results: [
+      { label: "انخفاض طلبات الإرجاع", value: "-68%" },
+      { label: "ارتفاع متوسط قيمة الطلب", value: "+38%" },
+      { label: "تقييمات 5 نجوم", value: "99.1%" },
+      { label: "إجمالي العلب المنتجة", value: "18,500 علبة" }
+    ],
+    tags: ["علب جلدية", "نظارات فاخرة", "طباعة ذهب بارزة", "أعلى معايير الجودة"]
+  },
+  {
+    id: 8,
+    title: "كراون أباريل للستريتوير",
+    client: "Krown Streetwear Co.",
+    category: "الباقة الشاملة: هوية + متجر + إدارة سوشيال",
+    projectType: "packages",
+    tag: "باقة إطلاق شاملة",
+    heroImage: "https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=1200&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=800&auto=format&fit=crop"
+    ],
+    revenue: "1.12 مليون دولار",
+    growth: "+245%",
+    roas: "نفدت خلال 8 دقائق",
+    timeline: "60 يوماً",
+    summary: "باقة إطلاق متكاملة: هوية الشارع الكاملة + متجر شوبيفاي معد بنظام الحماية من البوتات لإطلاقات الـ Drops + أكياس شحن معدنية + إدارة تيك توك شهرية.",
+    challenge: "رغبة المؤسسين في إطلاق البراند بهيبة كبرى دون الدخول في دوامة التعامل مع 4 شركات منفصلة.",
+    solution: "حل شامل من ميديا ماينيد: الهوية، متجر شوبيفاي مهيأ للضغط العالي، أكياس الشحن المعدنية الفاخرة، وحملة عد تنازلي على تيك توك.",
+    results: [
+      { label: "سرعة نفاد الإطلاق", value: "8 دقائق فقط" },
+      { label: "مبيعات أول 60 يوماً", value: "1.12M$" },
+      { label: "قائمة انتظار الإيميل", value: "62,000 مهتم" },
+      { label: "تسليم الأصول", value: "جاهز بنسبة 100%" }
+    ],
+    tags: ["باقة شاملة", "متجر شوبيفاي", "هوية بصرية", "إدارة حسابات"]
   }
 ];
 
 export const clientReviews = [
   {
-    quote: "Media Mined completely overhauled our Shopify store and took over our TikTok & Meta ads. In less than 4 months, our monthly revenue shot from $85k to over $420k with a 4.6x blended ROAS. Their eye for luxury design is unmatched.",
-    author: "Elena Rostova",
-    role: "Founder & Creative Director",
-    company: "Aura Luxe Fine Jewelry",
+    quote: "فريق ميديا ماينيد يدير صفحاتنا بالكامل وأعاد برمجة متجر الشوبيفاي الخاص بنا. في أقل من 4 أشهر، قفزت إيراداتنا الشهرية من 85 ألف دولار إلى أكثر من 420 ألف دولار. ذوقهم في الفخامة ولمسات الذهب والتصوير لا مثيل له.",
+    author: "إيلينا روستوفا",
+    role: "المؤسس والمدير الإبداعي",
+    company: "مجوهرات أورا لوكس",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
-    metric: "$420K/mo Scaled"
+    projectDone: "متجر شوبيفاي + إدارة صفحات السوشيال ميديا",
+    metric: "420K$ شهرياً"
   },
   {
-    quote: "Most agencies know ads or they know web design. Media Mined is the only agency that mastered both. When our viral TikTok hit 6M views, the Shopify store they built converted at 5.2% without a single glitch. True partners.",
-    author: "Marcus Vance",
-    role: "CEO & Co-Founder",
-    company: "Veloce Activewear",
+    quote: "تسليم حساباتنا على إنستغرام وتيك توك إلى ميديا ماينيد كان أفضل قرار تجاري اتخذناه. ينتجون شهرياً أكثر من 30 فيديو ريلز احترافي يتجاوز بعضها نصف مليون مشاهدة مجانية، مما يضخ آلاف الزوار يومياً لمتجرنا.",
+    author: "ماركوس فانس",
+    role: "الرئيس التنفيذي والشريك المؤسس",
+    company: "فيلوتشي للملابس الرياضية",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
-    metric: "+310% YoY Growth"
+    projectDone: "إدارة السوشيال ميديا وصناعة المحتوى",
+    metric: "14.8M مشاهدة"
   },
   {
-    quote: "Their influencer seeding system and custom landing pages allowed us to sell out 35,000 units in record time. Media Mined's focus on Shopify conversion and gold-standard aesthetics gave our brand instant prestige.",
-    author: "Sophia Chen",
-    role: "Head of E-Commerce",
-    company: "Botanica Glow Labs",
+    quote: "تصميم التغليف والعلب والهوية البصرية نقل براند مستحضرات التجميل الخاص بنا إلى مصاف الماركات العالمية. عندما فتحنا البيع على المتجر الجديد، بيعت 35 ألف قطعة في وقت قياسي بفضل التقديم الفاخر.",
+    author: "صوفيا تشن",
+    role: "مديرة تطوير المنتجات",
+    company: "بوتانيكا جلو للمختبرات",
     avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop",
-    metric: "35k Units Sold"
-  }
-];
-
-export const pricingPlans = [
-  {
-    name: "Growth Launchpad",
-    subtitle: "For emerging Shopify brands seeking rapid traction and brand credibility.",
-    price: "$2,950",
-    period: "/month",
-    featured: false,
-    deliverables: [
-      "Complete Shopify 2.0 Theme CRO Audit & Speed Pass",
-      "12 High-Converting UGC / Short-form Videos per month",
-      "Meta or TikTok Paid Ads Campaign Management",
-      "Core Klaviyo Email Flows (Welcome + Abandoned Cart)",
-      "Weekly Performance Dashboard & Dedicated Slack Channel"
-    ]
-  },
-  {
-    name: "Scale Accelerator",
-    subtitle: "Our flagship package for established stores aiming for 7-figure scale.",
-    price: "$5,800",
-    period: "/month",
-    featured: true,
-    badge: "Most Popular",
-    deliverables: [
-      "Bespoke Shopify Storefront Optimization & Custom Pages",
-      "25+ Scripted Short-form Videos & Creator Seeding Blitz",
-      "Omnichannel Ads Management (Meta, TikTok & Pinterest)",
-      "Full Klaviyo Lifecycle Suite (Email + SMS Omnichannel)",
-      "A/B Testing Funnel & Dynamic AOV Upsell Engine",
-      "Direct Senior Media Buyer & Creative Director Access"
-    ]
-  },
-  {
-    name: "Enterprise Dominance",
-    subtitle: "Full-scale outsourced growth team for high-volume 7 & 8-figure brands.",
-    price: "$10,500",
-    period: "/month",
-    featured: false,
-    deliverables: [
-      "Shopify Plus Headless/Custom Liquid Architecture",
-      "40+ Premium Video Creatives & Whitelisted Creator Rights",
-      "Global Paid Acquisition & Multi-Currency Expansion",
-      "Dedicated Video Editor, Copywriter & Senior Growth Lead",
-      "Custom Shopify App & Private API Integrations",
-      "24/7 Priority Emergency Coverage & Growth Guarantee"
-    ]
+    projectDone: "البراندنج وتصميم التغليف ومتجر شوبيفاي",
+    metric: "35k عبوة بيعت"
   }
 ];

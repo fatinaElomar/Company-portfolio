@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, Calendar, Sparkles, Send, ShieldCheck, ShoppingBag } from 'lucide-react';
+import { X, CheckCircle, Sparkles, MapPin, ShieldCheck, PhoneCall } from 'lucide-react';
 
 export default function ContactModal({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    storeUrl: '',
-    revenue: '$20k - $50k / mo',
-    goals: 'Shopify CRO & Redesign'
+    company: '',
+    location: 'الإمارات العربية المتحدة (UAE)',
+    projectType: 'إدارة صفحات السوشيال ميديا للشركات',
+    budget: '$2,500 - $5,000',
+    notes: ''
   });
 
   if (!isOpen) return null;
@@ -24,150 +26,188 @@ export default function ContactModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in">
-      <div className="relative w-full max-w-xl rounded-3xl bg-zinc-950 border border-gold-500/40 p-6 sm:p-8 shadow-[0_0_50px_rgba(212,175,55,0.25)] text-white">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/60 backdrop-blur-md animate-fade-in text-right">
+      <div className="relative w-full max-w-xl rounded-none bg-white border border-zinc-200 p-6 sm:p-8 text-zinc-900">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors cursor-pointer"
+          className="absolute top-5 left-5 p-2 rounded-full bg-zinc-100 text-zinc-500 hover:text-black hover:bg-zinc-200 transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
 
         {!submitted ? (
           <div>
-            <div className="flex items-center gap-2 mb-2 text-gold-400 text-xs font-mono uppercase tracking-widest">
-              <Sparkles className="w-4 h-4" />
-              Direct Founder & Growth Partner Access
+            <div className="flex items-center gap-2 mb-2 text-amber-800 text-xs font-mono uppercase tracking-widest font-bold">
+              <Sparkles className="w-4 h-4 text-amber-600" />
+              مقراتنا الإقليمية في لبنان والإمارات
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-white mb-2">
-              Book Your 1-on-1 <span className="text-gold-gradient">Shopify Growth Audit</span>
+            <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-zinc-950 mb-2">
+              احجز <span className="text-gold-gradient">مكالمتك الاستشارية</span>
             </h3>
             
-            <p className="text-zinc-400 text-xs sm:text-sm mb-6 leading-relaxed">
-              We review your store live, pinpoint your exact conversion leaks, and deliver a custom 90-day viral social acquisition plan. No pitch decks, just actionable value.
+            <p className="text-zinc-600 text-xs sm:text-sm mb-6 leading-relaxed">
+              نخدم الشركات والمتاجر في الإمارات، لبنان، الخليج، وحول العالم. شاركنا متطلبات براندك لترتيب جلسة عمل ومناقشة تفاصيل المشروع.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
-                    Your Name
+                  <label className="block text-xs font-bold text-zinc-700 mb-1.5">
+                    الاسم الكامل
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="Marcus Vance"
+                    placeholder="مثال: عمر الأحمد"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 focus:border-gold-400 focus:outline-none text-white text-sm"
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
-                    Work Email
+                  <label className="block text-xs font-bold text-zinc-700 mb-1.5">
+                    البريد الإلكتروني للعمل
                   </label>
                   <input
                     type="email"
                     required
-                    placeholder="marcus@brand.com"
+                    placeholder="omar@brand.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 focus:border-gold-400 focus:outline-none text-white text-sm"
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
-                  Shopify Store URL / Instagram Handle
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="https://yourstore.com"
-                  value={formData.storeUrl}
-                  onChange={(e) => setFormData({ ...formData, storeUrl: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 focus:border-gold-400 focus:outline-none text-white text-sm"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold text-zinc-700 mb-1.5">
+                    اسم الشركة / المتجر الحالي
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="مثال: أورا لوكس أو رابط المتجر"
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-zinc-700 mb-1.5">
+                    مقر إقامتك / تواجد الشركة
+                  </label>
+                  <select
+                    value={formData.location}
+                    onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm cursor-pointer font-medium"
+                  >
+                    <option value="الإمارات العربية المتحدة (UAE)">الإمارات العربية المتحدة (UAE)</option>
+                    <option value="لبنان (Lebanon)">لبنان (Lebanon)</option>
+                    <option value="المملكة العربية السعودية (KSA) والخليج">المملكة العربية السعودية (KSA) والخليج</option>
+                    <option value="أمريكا وأوروبا">أمريكا وأوروبا</option>
+                    <option value="دولة أخرى">دولة أخرى</option>
+                  </select>
+                </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
-                    Current Monthly Revenue
+                  <label className="block text-xs font-bold text-zinc-700 mb-1.5">
+                    المشروع المطلوب
                   </label>
                   <select
-                    value={formData.revenue}
-                    onChange={(e) => setFormData({ ...formData, revenue: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 focus:border-gold-400 focus:outline-none text-white text-sm cursor-pointer"
+                    value={formData.projectType}
+                    onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm cursor-pointer font-medium"
                   >
-                    <option value="Under $15k / mo">Under $15k / mo</option>
-                    <option value="$20k - $50k / mo">$20k - $50k / mo</option>
-                    <option value="$50k - $150k / mo">$50k - $150k / mo</option>
-                    <option value="$150k - $500k+ / mo">$150k - $500k+ / mo (Scale)</option>
+                    <option value="إدارة صفحات السوشيال ميديا للشركات">إدارة صفحات السوشيال ميديا للشركات</option>
+                    <option value="الهوية البصرية والبراندنج الفاخر">الهوية البصرية والبراندنج الفاخر</option>
+                    <option value="تصميم التغليف والعلب وتجربة الـ Unboxing">تصميم التغليف والعلب وتجربة الـ Unboxing</option>
+                    <option value="تطوير متجر شوبيفاي أو موقع إلكتروني">تطوير متجر شوبيفاي أو موقع إلكتروني</option>
+                    <option value="الباقة الشاملة (سوشيال + هوية + متجر)">الباقة الشاملة (سوشيال + هوية + متجر)</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
-                    Primary Priority
+                  <label className="block text-xs font-bold text-zinc-700 mb-1.5">
+                    الميزانية التقديرية المرصودة
                   </label>
                   <select
-                    value={formData.goals}
-                    onChange={(e) => setFormData({ ...formData, goals: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 focus:border-gold-400 focus:outline-none text-white text-sm cursor-pointer"
+                    value={formData.budget}
+                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm cursor-pointer font-medium"
                   >
-                    <option value="Shopify CRO & Redesign">Shopify CRO & Redesign</option>
-                    <option value="Viral TikTok & Reels Videos">Viral TikTok & Reels Videos</option>
-                    <option value="Paid Ads Scaling (Meta/TikTok)">Paid Ads Scaling (Meta/TikTok)</option>
-                    <option value="UGC & Creator Seeding">UGC & Creator Seeding</option>
-                    <option value="Full Omnichannel Growth">Full Omnichannel Growth</option>
+                    <option value="$2,000 - $3,500">$2,000 - $3,500</option>
+                    <option value="$3,500 - $7,000">$3,500 - $7,000</option>
+                    <option value="$7,000 - $15,000+">$7,000 - $15,000+</option>
+                    <option value="مشروع مؤسسي / عقد شهري مستمر">مشروع مؤسسي / عقد شهري مستمر</option>
                   </select>
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-zinc-700 mb-1.5">
+                  نبذة سريعة عن أهدافك (اختياري)
+                </label>
+                <textarea
+                  rows="2"
+                  placeholder="أخبرنا باختصار عن موعد الإطلاق المستهدف وما الذي تود من فريقنا إنجازه..."
+                  value={formData.notes}
+                  onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                  className="w-full px-4 py-2 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm resize-none"
+                ></textarea>
               </div>
 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-gold-gradient text-black flex items-center justify-center gap-2 shadow-gold-glow hover:shadow-gold-glow-lg transition-all cursor-pointer"
+                  className="w-full py-4 rounded-none font-bold text-sm bg-gold-gradient text-white flex items-center justify-center gap-2-gold-glow hover:shadow-gold-glow-lg transition-all cursor-pointer"
                 >
-                  <Calendar className="w-4 h-4" />
-                  <span>Confirm Strategy Session Reservation</span>
+                  <PhoneCall className="w-4 h-4" />
+                  <span>تأكيد طلب حجز المكالمة الاستشارية</span>
                 </button>
               </div>
 
-              <div className="flex items-center justify-center gap-2 text-[11px] text-zinc-500 pt-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-gold-400" />
-                <span>Strict Non-Disclosure Agreement Guaranteed</span>
+              <div className="flex items-center justify-between text-[11px] text-zinc-500 pt-1 font-bold">
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>اتفاقية سرية معلومات مضمونة (NDA)</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5 text-amber-600" />
+                  <span>مكاتبنا: دبي وبيروت</span>
+                </div>
               </div>
             </form>
           </div>
         ) : (
           <div className="text-center py-8 space-y-4">
-            <div className="w-16 h-16 rounded-full bg-gold-500/20 border border-gold-400 flex items-center justify-center text-gold-400 mx-auto">
+            <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-300 flex items-center justify-center text-emerald-600 mx-auto">
               <CheckCircle className="w-8 h-8" />
             </div>
 
-            <h3 className="text-2xl font-display font-extrabold text-white">
-              Strategy Session Confirmed!
+            <h3 className="text-2xl font-display font-extrabold text-zinc-950">
+              تم استلام طلب المكالمة بنجاح!
             </h3>
 
-            <p className="text-zinc-300 text-sm max-w-md mx-auto leading-relaxed">
-              Thank you, <span className="text-gold-300 font-bold">{formData.name}</span>. Our senior growth architect is preparing the custom diagnostic teardown for <span className="text-white font-mono">{formData.storeUrl}</span>.
+            <p className="text-zinc-600 text-sm max-w-md mx-auto leading-relaxed">
+              شكراً لك، <span className="text-zinc-950 font-bold">{formData.name}</span>. فريقنا التنفيذي في <span className="text-zinc-950 font-bold">{formData.location}</span> يقوم الآن بمراجعة طلب <span className="text-zinc-950 font-bold">{formData.company}</span>.
             </p>
 
-            <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-400 max-w-sm mx-auto">
-              We've dispatched calendar invitations and preparation details directly to <span className="text-white">{formData.email}</span>.
+            <div className="p-4 rounded-none bg-zinc-50 border border-zinc-200 text-xs text-zinc-600 max-w-sm mx-auto font-medium">
+              تم إرسال تأكيد الموعد إلى <span className="text-zinc-900 font-bold">{formData.email}</span>. سيتواصل معك أحد خبرائنا من استوديو بيروت أو دبي خلال 24 ساعة.
             </div>
 
             <button
               onClick={handleReset}
-              className="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold-gradient text-black mt-4 cursor-pointer"
+              className="px-6 py-2.5 rounded-full text-xs font-bold bg-zinc-900 text-white hover:bg-gold-gradient mt-4 cursor-pointer"
             >
-              Return to Site
+              العودة إلى الموقع
             </button>
           </div>
         )}
