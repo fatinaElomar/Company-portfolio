@@ -48,7 +48,7 @@ export default function OurReach({ onOpenBooking }) {
             <Globe className="w-3.5 h-3.5 text-amber-600" />
             نطاق انتشارنا وحضورنا
           </div>
-          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-zinc-950 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl leading-snug font-display font-extrabold text-zinc-950 tracking-tight mb-4">
             خدماتنا تمتد عبر <span className="text-gold-gradient">لبنان، الإمارات، والأسواق الدولية</span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-600 leading-relaxed font-normal">

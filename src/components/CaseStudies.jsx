@@ -46,7 +46,7 @@ export default function CaseStudies({ onOpenBooking }) {
               <Sparkles className="w-3.5 h-3.5 text-amber-600" />
               أحدث المشاريع والأعمال المنفذة
             </div>
-            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-zinc-950 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl leading-snug font-display font-extrabold text-zinc-950 tracking-tight">
               سجل أعمال <span className="text-gold-gradient">عملاء ميديا ماينيد</span>
             </h2>
             <p className="text-zinc-600 text-sm sm:text-base mt-2 max-w-xl">

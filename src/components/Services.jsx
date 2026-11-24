@@ -31,7 +31,7 @@ export default function Services({ onOpenBooking }) {
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-widest mb-3">
             مجالات عملنا وتخصصنا
           </div>
-          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-zinc-950 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl leading-snug font-display font-extrabold text-zinc-950 tracking-tight mb-4">
             نتولى مشاريعك <span className="text-gold-gradient">من الفكرة إلى الإطلاق الكامل</span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-600 leading-relaxed font-normal">

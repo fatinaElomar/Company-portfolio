@@ -10,7 +10,7 @@ export default function Testimonials() {
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-widest mb-3">
             ماذا يقول عملاؤنا
           </div>
-          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-zinc-950 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl leading-snug font-display font-extrabold text-zinc-950 tracking-tight mb-4">
             شهادات نعتز بها من <span className="text-gold-gradient">مؤسسي الشركات والمتاجر</span>
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">

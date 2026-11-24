@@ -68,7 +68,7 @@ export default function Hero({ onOpenBooking }) {
           </div>
 
           {/* Main Headline in Majestic Arabic Typography */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-black tracking-tight text-zinc-950 leading-[1.25] mb-6">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl leading-snug md:leading-[1.25] font-display font-black tracking-tight text-zinc-950 leading-[1.25] mb-6">
             ندير صفحاتك، نبني متجرك، ونبتكر{' '}
             <span className="text-gold-gradient relative inline-block">
               علامات تجارية أيقونية
