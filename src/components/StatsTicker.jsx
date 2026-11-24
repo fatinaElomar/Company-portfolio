@@ -21,9 +21,9 @@ export default function StatsTicker() {
           {partners.map((partner, idx) => (
             <div
               key={idx}
-              className="p-3.5 rounded-none bg-zinc-50 border border-zinc-200/80 hover:border-gold-500/60 text-center transition-all duration-300 group"
+              className="p-3.5 rounded-none bg-zinc-50 border border-zinc-200/80 hover:border-zinc-900/60 text-center transition-all duration-300 group"
             >
-              <div className="text-xs sm:text-sm font-bold text-zinc-900 group-hover:text-amber-800 transition-colors">
+              <div className="text-xs sm:text-sm font-bold text-zinc-900 group-hover:text-zinc-900 transition-colors">
                 {partner.name}
               </div>
               <div className="text-[10px] text-zinc-500 tracking-wider uppercase mt-0.5 font-medium">
@@ -36,7 +36,7 @@ export default function StatsTicker() {
         {/* Big Impact Numbers */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 pt-8 border-t border-zinc-100 text-center">
           <div>
-            <div className="text-3xl sm:text-4xl font-display font-black text-zinc-900 text-gold-gradient">
+            <div className="text-3xl sm:text-4xl font-display font-black text-zinc-900 text-zinc-950">
               +500K+
             </div>
             <div className="text-xs text-zinc-600 uppercase tracking-wider mt-1 font-bold">
@@ -54,7 +54,7 @@ export default function StatsTicker() {
           </div>
 
           <div>
-            <div className="text-3xl sm:text-4xl font-display font-black text-amber-700">
+            <div className="text-3xl sm:text-4xl font-display font-black text-zinc-800">
               4.6x
             </div>
             <div className="text-xs text-zinc-600 uppercase tracking-wider mt-1 font-bold">

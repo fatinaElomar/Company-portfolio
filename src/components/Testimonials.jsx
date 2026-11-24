@@ -7,11 +7,11 @@ export default function Testimonials() {
     <section id="testimonials" className="py-24 bg-zinc-50 border-t border-zinc-200 relative text-right">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-900 text-xs font-bold uppercase tracking-widest mb-3">
             ماذا يقول عملاؤنا
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl leading-snug font-display font-extrabold text-zinc-950 tracking-tight mb-4">
-            شهادات نعتز بها من <span className="text-gold-gradient">مؤسسي الشركات والمتاجر</span>
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-zinc-950 mb-3 font-display font-extrabold text-zinc-950 tracking-tight mb-4">
+            شهادات نعتز بها من <span className="text-zinc-950">مؤسسي الشركات والمتاجر</span>
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
             اكتشف آراء رواد الأعمال ومديري الماركات الذين وسعوا نطاق أعمالهم مع ميديا ماينيد في لبنان والإمارات ودول الخليج.
@@ -22,7 +22,7 @@ export default function Testimonials() {
           {clientReviews.map((review, idx) => (
             <div
               key={idx}
-              className="rounded-none bg-white p-6 sm:p-8 border border-zinc-200 hover:border-gold-500 transition-all duration-300 flex flex-col justify-between group relative text-right"
+              className="rounded-none bg-white p-6 sm:p-8 border border-zinc-200 hover:border-zinc-900 transition-all duration-300 flex flex-col justify-between group relative text-right"
             >
               <div className="absolute top-6 left-6 text-amber-200/60 group-hover:text-amber-300 transition-colors">
                 <Quote className="w-8 h-8" />
@@ -32,7 +32,7 @@ export default function Testimonials() {
                 {/* 5 Stars */}
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
+                    <Star key={i} className="w-4 h-4 fill-zinc-900 text-zinc-600" />
                   ))}
                   <span className="text-[11px] font-mono text-zinc-500 mr-2 font-bold">5.0 عميل موثق</span>
                 </div>
@@ -47,7 +47,7 @@ export default function Testimonials() {
                   <img
                     src={review.avatar}
                     alt={review.author}
-                    className="w-11 h-11 rounded-full object-cover border border-amber-300"
+                    className="w-11 h-11 rounded-full object-cover border border-zinc-400"
                   />
                   <div>
                     <div className="text-sm font-bold text-zinc-900 flex items-center gap-1.5">
@@ -55,7 +55,7 @@ export default function Testimonials() {
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                     </div>
                     <div className="text-xs text-zinc-500">{review.role}</div>
-                    <div className="text-[11px] text-amber-800 font-bold">{review.company}</div>
+                    <div className="text-[11px] text-zinc-900 font-bold">{review.company}</div>
                   </div>
                 </div>
 

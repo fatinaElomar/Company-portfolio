@@ -44,7 +44,7 @@ export default function App() {
         {/* Featured Projects & High-Resolution Image Galleries */}
         <CaseStudies onOpenBooking={() => setBookingOpen(true)} />
 
-        {/* The 4-step Media Mined Growth Blueprint */}
+        {/* The 4-step MEDIAMIND Growth Blueprint */}
         <Process onOpenBooking={() => setBookingOpen(true)} />
 
         {/* Client Reviews & Proof */}

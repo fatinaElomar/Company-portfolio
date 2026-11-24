@@ -17,12 +17,12 @@ export default function ClientLogos() {
     <section className="py-16 bg-zinc-50/60 border-b border-zinc-200/80 relative overflow-hidden text-right">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-mono uppercase tracking-[0.2em] mb-2 font-bold">
-            <Sparkles className="w-3 h-3 text-amber-600" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-900 text-[11px] font-mono uppercase tracking-[0.2em] mb-2 font-bold">
+            <Sparkles className="w-3 h-3 text-zinc-700" />
             علامات تجارية نعتز بها
           </div>
           <h3 className="text-xl sm:text-2xl font-display font-bold text-zinc-900 tracking-wide">
-            شركاء النجاح في <span className="text-gold-gradient">التجارة الإلكترونية والسوشيال ميديا</span>
+            شركاء النجاح في <span className="text-zinc-950">التجارة الإلكترونية والسوشيال ميديا</span>
           </h3>
           <p className="text-xs text-zinc-500 mt-1 max-w-lg mx-auto">
             من الشركات الناشئة الواعدة إلى كبرى العلامات التجارية الرائدة في بيروت، دبي، والشرق الأوسط.
@@ -34,15 +34,15 @@ export default function ClientLogos() {
           {clientLogos.map((client, idx) => (
             <div
               key={idx}
-              className="h-24 rounded-none bg-white border border-zinc-200 hover:border-gold-500 p-3 flex flex-col items-center justify-center text-center transition-all duration-300 group cursor-default"
+              className="h-24 rounded-none bg-white border border-zinc-200 hover:border-zinc-900 p-3 flex flex-col items-center justify-center text-center transition-all duration-300 group cursor-default"
             >
-              <span className="text-sm text-amber-600 group-hover:scale-110 transition-transform mb-1">
+              <span className="text-sm text-zinc-700 group-hover:scale-110 transition-transform mb-1">
                 {client.symbol}
               </span>
               <span className="font-display font-extrabold text-xs tracking-[0.18em] text-zinc-800 group-hover:text-zinc-950 transition-colors">
                 {client.name}
               </span>
-              <span className="text-[10px] tracking-wider text-zinc-500 mt-0.5 group-hover:text-amber-800 transition-colors font-medium">
+              <span className="text-[10px] tracking-wider text-zinc-500 mt-0.5 group-hover:text-zinc-900 transition-colors font-medium">
                 {client.sub}
               </span>
             </div>

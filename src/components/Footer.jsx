@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Instagram, Linkedin, Twitter, Youtube, MapPin, CheckCircle2, PhoneCall } from 'lucide-react';
+import logoMark from '../assets/logo-black-mark.png';
 
 export default function Footer({ onOpenBooking }) {
   const [newsletterEmail, setNewsletterEmail] = useState('');
@@ -13,19 +14,19 @@ export default function Footer({ onOpenBooking }) {
   };
 
   return (
-    <footer className="bg-white border-t border-zinc-200 text-zinc-600 text-xs py-16 relative text-right">
+    <footer className="bg-white border-t border-zinc-200 text-zinc-600 text-xs py-14 relative text-right">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Newsletter / "Stay in the loop" Section (Devancy Inspired in Arabic) */}
-        <div className="mb-14 p-8 sm:p-10 rounded-none bg-zinc-50 border border-zinc-200 flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Newsletter Section */}
+        <div className="mb-12 p-6 sm:p-8 rounded-none bg-zinc-50 border border-zinc-200 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-lg">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-amber-800 font-bold block mb-1">
-              نشرة ميديا ماينيد التحليلية
+            <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-700 font-bold block mb-1">
+              نشرة MEDIAMIND التحليلية
             </span>
-            <h4 className="text-xl sm:text-2xl font-display font-bold text-zinc-950">
+            <h4 className="text-lg sm:text-xl font-display font-bold text-zinc-950">
               ابقَ على اطلاع دائم
             </h4>
             <p className="text-xs text-zinc-600 mt-1">
-              انضم إلى أكثر من 4,200 من رواد الأعمال وأصحاب المتاجر الذين يتلقون تقريرنا الشهري حول أحدث استراتيجيات تيك توك، رفع تحويلات شوبيفاي، واتجاهات التغليف الفاخر.
+              انضم إلى أكثر من 4,200 من رواد الأعمال وأصحاب المتاجر الذين يتلقون تقريرنا الشهري حول أحدث استراتيجيات تيك توك، رفع تحويلات شوبيفاي، وتصميم التغليف.
             </p>
           </div>
 
@@ -38,65 +39,66 @@ export default function Footer({ onOpenBooking }) {
                   placeholder="أدخل بريدك الإلكتروني"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="px-4 py-3 rounded-full bg-white border border-zinc-300 text-zinc-900 text-xs placeholder-zinc-400 focus:outline-none focus:border-amber-600 flex-1 text-right"
+                  className="px-4 py-2.5 rounded-none bg-white border border-zinc-300 text-zinc-900 text-xs placeholder-zinc-400 focus:outline-none focus:border-zinc-950 flex-1 text-right"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-full bg-zinc-900 hover:bg-gold-gradient text-white text-xs font-bold transition-all cursor-pointer whitespace-nowrap"
+                  className="px-6 py-2.5 rounded-none bg-zinc-950 hover:bg-black text-white text-xs font-bold transition-all cursor-pointer whitespace-nowrap"
                 >
                   اشتراك
                 </button>
               </form>
             ) : (
-              <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 px-4 py-2.5 rounded-full border border-emerald-200">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <div className="flex items-center gap-2 text-xs font-bold text-zinc-900 bg-zinc-100 px-4 py-2.5 rounded-none border border-zinc-300">
+                <CheckCircle2 className="w-4 h-4 text-zinc-900" />
                 <span>أهلاً بك! تم تسجيل اشتراكك بنجاح.</span>
               </div>
             )}
           </div>
         </div>
 
-        {/* Links Grid in Arabic */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-zinc-200">
+        {/* Links Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-10 border-b border-zinc-200">
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-none bg-gradient-to-br from-gold-400 via-amber-500 to-amber-700 p-[1px]">
-                <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
-                  <span className="font-display font-black text-lg text-zinc-950">M</span>
-                </div>
+              <img src={logoMark} alt="MEDIAMIND" className="h-9 w-auto object-contain" />
+              <div className="flex flex-col text-right">
+                <span className="font-display font-black text-lg tracking-wider text-zinc-950 leading-tight">
+                  MEDIAMIND
+                </span>
+                <span className="text-[10px] tracking-widest text-zinc-500 uppercase font-semibold">
+                  بيروت • دبي
+                </span>
               </div>
-              <span className="font-display font-extrabold text-lg tracking-wider text-zinc-950">
-                MEDIA <span className="text-gold-gradient">MINED</span>
-              </span>
             </div>
 
-            <p className="text-zinc-600 text-xs sm:text-sm max-w-sm leading-relaxed">
-              وكالة رائدة متخصصة في إدارة صفحات السوشيال ميديا للشركات، الهوية البصرية الفاخرة، تصميم التغليف والعلب، وبناء وتطوير متاجر شوبيفاي التي تضاعف أرباحك الصافية.
+            <p className="text-zinc-600 text-xs max-w-sm leading-relaxed">
+              وكالة رائدة متخصصة في إدارة صفحات السوشيال ميديا للشركات، الهوية البصرية، تصميم التغليف والعلب، وبناء متاجر شوبيفاي التي تضاعف أرباحك الصافية.
             </p>
 
-            {/* Dual Location Badges: Lebanon & UAE */}
+            {/* Dual Location Badges */}
             <div className="flex flex-wrap items-center gap-2 pt-1">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-[11px] text-zinc-700 font-semibold">
-                <MapPin className="w-3.5 h-3.5 text-amber-600" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-zinc-100 border border-zinc-200 text-[11px] text-zinc-700 font-semibold">
+                <MapPin className="w-3.5 h-3.5 text-zinc-900" />
                 <span className="font-bold text-zinc-900">دبي، الإمارات</span>
                 <span className="text-zinc-400">•</span>
                 <span className="text-zinc-600">مركز الأعمال والتوسع التجاري</span>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-[11px] text-zinc-700 font-semibold">
-                <MapPin className="w-3.5 h-3.5 text-amber-600" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-zinc-100 border border-zinc-200 text-[11px] text-zinc-700 font-semibold">
+                <MapPin className="w-3.5 h-3.5 text-zinc-900" />
                 <span className="font-bold text-zinc-900">بيروت، لبنان</span>
                 <span className="text-zinc-400">•</span>
-                <span className="text-zinc-600">استوديو الإنتاج الفني وتصاميم الهوية</span>
+                <span className="text-zinc-600">استوديو الإنتاج وتصاميم الهوية</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-2 pt-2">
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:border-gold-500 hover:text-amber-800 transition-colors"
+                className="w-8 h-8 rounded-none bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:bg-zinc-950 hover:text-white transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -105,10 +107,10 @@ export default function Footer({ onOpenBooking }) {
                 href="https://tiktok.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:border-gold-500 hover:text-amber-800 transition-colors"
+                className="w-8 h-8 rounded-none bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:bg-zinc-950 hover:text-white transition-colors"
                 aria-label="TikTok"
               >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298 0 .591.045.87.134V9.41a6.34 6.34 0 0 0-.87-.06A6.33 6.33 0 0 0 3 15.68a6.34 6.34 0 0 0 10.82 4.47 6.27 6.27 0 0 0 1.86-4.48V8.71a8.18 8.18 0 0 0 4.91 1.62v-3.64z"/>
                 </svg>
               </a>
@@ -116,105 +118,71 @@ export default function Footer({ onOpenBooking }) {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:border-gold-500 hover:text-amber-800 transition-colors"
+                className="w-8 h-8 rounded-none bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:bg-zinc-950 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:border-gold-500 hover:text-amber-800 transition-colors"
-                aria-label="X (Twitter)"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-zinc-100 border border-zinc-200 flex items-center justify-center hover:border-gold-500 hover:text-amber-800 transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-4 h-4" />
-              </a>
             </div>
           </div>
 
-          {/* Project Pillars */}
+          {/* Col 2: Services */}
           <div>
-            <h4 className="text-zinc-950 font-bold text-xs mb-4">
-              مجالات العمل
-            </h4>
-            <ul className="space-y-2.5">
-              <li><a href="#services" className="hover:text-amber-800 transition-colors">إدارة صفحات السوشيال ميديا</a></li>
-              <li><a href="#services" className="hover:text-amber-800 transition-colors">الهوية البصرية والبراندنج الفاخر</a></li>
-              <li><a href="#services" className="hover:text-amber-800 transition-colors">تصميم التغليف والعلب الملكية</a></li>
-              <li><a href="#services" className="hover:text-amber-800 transition-colors">تطوير متاجر شوبيفاي والمواقع</a></li>
-              <li><a href="#case-studies" className="hover:text-amber-800 transition-colors">الباقات الشاملة للشركات</a></li>
+            <h5 className="font-bold text-zinc-950 mb-3 text-xs tracking-wider uppercase">
+              الخدمات الرئيسية
+            </h5>
+            <ul className="space-y-2 text-zinc-600">
+              <li><a href="#services" className="hover:text-black transition-colors">إدارة صفحات السوشيال ميديا</a></li>
+              <li><a href="#services" className="hover:text-black transition-colors">البراندنج والهوية الفاخرة</a></li>
+              <li><a href="#services" className="hover:text-black transition-colors">تصميم التغليف والعلب (Packaging)</a></li>
+              <li><a href="#services" className="hover:text-black transition-colors">تطوير متاجر شوبيفاي 2.0</a></li>
+              <li><a href="#services" className="hover:text-black transition-colors">صناعة محتوى الريلز والتيك توك</a></li>
             </ul>
           </div>
 
-          {/* Navigation & Tools */}
+          {/* Col 3: Why Us & Reach */}
           <div>
-            <h4 className="text-zinc-950 font-bold text-xs mb-4">
-              أقسام الموقع
-            </h4>
-            <ul className="space-y-2.5">
-              <li><a href="#case-studies" className="hover:text-amber-800 transition-colors">سجل الأعمال والمشاريع</a></li>
-              <li><a href="#why-us" className="hover:text-amber-800 transition-colors">لماذا ميديا ماينيد؟</a></li>
-              <li><a href="#reach" className="hover:text-amber-800 transition-colors">نطاق انتشارنا (لبنان والإمارات)</a></li>
-              <li><a href="#testimonials" className="hover:text-amber-800 transition-colors">شهادات أصحاب الشركات</a></li>
-              <li><a href="#faq" className="hover:text-amber-800 transition-colors">الأسئلة الشائعة</a></li>
+            <h5 className="font-bold text-zinc-950 mb-3 text-xs tracking-wider uppercase">
+              عن الوكالة
+            </h5>
+            <ul className="space-y-2 text-zinc-600">
+              <li><a href="#why-us" className="hover:text-black transition-colors">معايير ميديا مايند</a></li>
+              <li><a href="#reach" className="hover:text-black transition-colors">نطاق انتشارنا الدولي</a></li>
+              <li><a href="#case-studies" className="hover:text-black transition-colors">سجل المشاريع والأعمال</a></li>
+              <li><a href="#testimonials" className="hover:text-black transition-colors">آراء الشركاء والعملاء</a></li>
+              <li><a href="#faq" className="hover:text-black transition-colors">الأسئلة الشائعة</a></li>
             </ul>
           </div>
 
-          {/* Regional Hubs & Inquiries */}
+          {/* Col 4: Contact CTA */}
           <div>
-            <h4 className="text-zinc-950 font-bold text-xs mb-4">
-              فروع واستوديوهات الوكالة
-            </h4>
+            <h5 className="font-bold text-zinc-950 mb-3 text-xs tracking-wider uppercase">
+              تواصل معنا
+            </h5>
             <div className="space-y-3">
-              <div>
-                <p className="text-zinc-900 font-bold flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5 text-amber-600" />
-                  الإمارات العربية المتحدة
-                </p>
-                <p className="text-zinc-500 text-[11px]">داون تاون دبي / الخليج التجاري</p>
-              </div>
-
-              <div>
-                <p className="text-zinc-900 font-bold flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5 text-amber-600" />
-                  لبنان
-                </p>
-                <p className="text-zinc-500 text-[11px]">بيروت سنترال / استوديو التصوير والتصميم</p>
-              </div>
-
-              <div className="pt-2">
-                <button
-                  onClick={onOpenBooking}
-                  className="inline-flex items-center gap-1.5 text-amber-800 hover:text-amber-950 font-bold cursor-pointer"
-                >
-                  <PhoneCall className="w-3.5 h-3.5 text-amber-600" />
-                  <span>احجز مكالمة استشارية</span>
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                </button>
-              </div>
+              <p className="text-zinc-600 text-xs">
+                جاهز لتطوير علامتك التجارية ومضاعفة مبيعاتك؟
+              </p>
+              <button
+                onClick={onOpenBooking}
+                className="w-full py-2.5 px-4 rounded-none bg-zinc-950 hover:bg-black text-white font-bold text-xs flex items-center justify-center gap-2 cursor-pointer transition-colors"
+              >
+                <PhoneCall className="w-3.5 h-3.5" />
+                <span>احجز مكالمة استشارية</span>
+              </button>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500 font-medium">
+        {/* Bottom bar */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-zinc-500 gap-3">
           <div>
-            © {new Date().getFullYear()} وكالة ميديا ماينيد (Media Mined) • بيروت ودبي. جميع الحقوق محفوظة.
+            © {new Date().getFullYear()} MEDIAMIND Agency. جميع الحقوق محفوظة.
           </div>
-          <div className="flex items-center gap-6">
-            <span className="hover:text-zinc-700 transition-colors cursor-pointer">سياسة الخصوصية</span>
-            <span className="hover:text-zinc-700 transition-colors cursor-pointer">الشروط والأحكام</span>
-            <span className="hover:text-zinc-700 transition-colors cursor-pointer">اتفاقية تقديم الخدمات</span>
+          <div className="flex items-center gap-4">
+            <span className="text-zinc-400">بيروت، لبنان</span>
+            <span>•</span>
+            <span className="text-zinc-400">دبي، الإمارات العربية المتحدة</span>
           </div>
         </div>
       </div>

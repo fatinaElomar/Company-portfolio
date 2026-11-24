@@ -42,12 +42,12 @@ export default function CaseStudies({ onOpenBooking }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-widest mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-900 text-xs font-bold uppercase tracking-widest mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-zinc-700" />
               أحدث المشاريع والأعمال المنفذة
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl leading-snug font-display font-extrabold text-zinc-950 tracking-tight">
-              سجل أعمال <span className="text-gold-gradient">عملاء ميديا ماينيد</span>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-zinc-950 mb-3 font-display font-extrabold text-zinc-950 tracking-tight">
+              سجل أعمال <span className="text-zinc-950">عملاء ميديا ماينيد</span>
             </h2>
             <p className="text-zinc-600 text-sm sm:text-base mt-2 max-w-xl">
               تصفح نتائج مشاريعنا الحقيقية بالأرقام عبر إدارة السوشيال ميديا، تصميم التغليف والعلب، البراندنج الفاخر، ومتاجر شوبيفاي فائقة المبيعات.
@@ -79,7 +79,7 @@ export default function CaseStudies({ onOpenBooking }) {
               {/* Left Column: Metrics & Story */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="text-xs uppercase tracking-wider text-amber-800 bg-amber-100/70 border border-amber-300 px-3 py-1 rounded-full font-bold">
+                  <span className="text-xs uppercase tracking-wider text-zinc-900 bg-zinc-200/70 border border-zinc-400 px-3 py-1 rounded-full font-bold">
                     {selectedCase.category}
                   </span>
                   <span className="text-xs text-zinc-500 font-medium">العميل: {selectedCase.client}</span>
@@ -106,7 +106,7 @@ export default function CaseStudies({ onOpenBooking }) {
                   </div>
 
                   <div className="p-4 rounded-none bg-white border border-zinc-200">
-                    <div className="text-xs font-bold text-amber-700 flex items-center gap-1.5 uppercase tracking-wider mb-1">
+                    <div className="text-xs font-bold text-zinc-800 flex items-center gap-1.5 uppercase tracking-wider mb-1">
                       <Award className="w-3.5 h-3.5" />
                       مخرجات وحلول ميديا ماينيد
                     </div>
@@ -119,7 +119,7 @@ export default function CaseStudies({ onOpenBooking }) {
                   {selectedCase.results.map((res, rIdx) => (
                     <div key={rIdx} className="p-3 rounded-none bg-white border border-zinc-200">
                       <div className="text-[11px] text-zinc-500 font-medium">{res.label}</div>
-                      <div className="text-base sm:text-lg font-bold font-display text-zinc-950 mt-0.5 text-gold-gradient">
+                      <div className="text-base sm:text-lg font-bold font-display text-zinc-950 mt-0.5 text-zinc-950">
                         {res.value}
                       </div>
                     </div>
@@ -141,13 +141,13 @@ export default function CaseStudies({ onOpenBooking }) {
                       onClick={() => setModalOpen(true)}
                       className="px-4 py-2.5 rounded-full text-xs font-bold text-zinc-800 hover:text-black bg-white hover:bg-zinc-100 border border-zinc-200 flex items-center gap-1.5 cursor-pointer"
                     >
-                      <Eye className="w-3.5 h-3.5 text-amber-600" />
+                      <Eye className="w-3.5 h-3.5 text-zinc-700" />
                       <span>معاينة المعرض</span>
                     </button>
 
                     <button
                       onClick={onOpenBooking}
-                      className="px-5 py-2.5 rounded-full text-xs font-bold bg-gold-gradient text-white flex items-center gap-2 hover:shadow-gold-glow transition-all cursor-pointer"
+                      className="px-5 py-2.5 rounded-full text-xs font-bold bg-zinc-950 text-white flex items-center gap-2 hover:shadow-gold-glow transition-all cursor-pointer"
                     >
                       <PhoneCall className="w-3.5 h-3.5" />
                       <span>احجز مكالمة لمشروعك</span>
@@ -171,7 +171,7 @@ export default function CaseStudies({ onOpenBooking }) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
                   <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-md text-[11px] font-mono text-zinc-800 border border-zinc-200 flex items-center gap-1 font-semibold">
-                    <ImageIcon className="w-3 h-3 text-amber-600" />
+                    <ImageIcon className="w-3 h-3 text-zinc-700" />
                     <span>انقر لتكبير المعرض</span>
                   </div>
                   
@@ -179,7 +179,7 @@ export default function CaseStudies({ onOpenBooking }) {
                   <div className="absolute bottom-4 left-4 right-4 p-4 rounded-none bg-white/95 backdrop-blur-md border border-zinc-200 flex items-center justify-between text-right">
                     <div>
                       <div className="text-[11px] text-zinc-500 uppercase font-mono tracking-wider font-bold">أثر المشروع</div>
-                      <div className="text-xl font-bold font-display text-zinc-950 text-gold-gradient">
+                      <div className="text-xl font-bold font-display text-zinc-950 text-zinc-950">
                         {selectedCase.revenue}
                       </div>
                     </div>
@@ -231,8 +231,8 @@ export default function CaseStudies({ onOpenBooking }) {
               onClick={() => handleSelectCase(study)}
               className={`cursor-pointer rounded-none bg-white p-5 border transition-all duration-300 relative group flex flex-col justify-between ${
                 selectedCase?.id === study.id
-                  ? 'border-gold-500 ring-2 ring-gold-400/20 scale-[1.02]'
-                  : 'border-zinc-200 hover:border-gold-500/60'
+                  ? 'border-zinc-900 ring-2 ring-gold-400/20 scale-[1.02]'
+                  : 'border-zinc-200 hover:border-zinc-900/60'
               }`}
             >
               <div>
@@ -242,7 +242,7 @@ export default function CaseStudies({ onOpenBooking }) {
                     alt={study.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-2 left-2 bg-white/95 backdrop-blur-md text-amber-800 font-mono text-[10px] px-2 py-0.5 rounded border border-zinc-200 font-bold">
+                  <div className="absolute top-2 left-2 bg-white/95 backdrop-blur-md text-zinc-900 font-mono text-[10px] px-2 py-0.5 rounded border border-zinc-200 font-bold">
                     {study.roas}
                   </div>
                   <div className="absolute bottom-2 right-2 bg-zinc-950/90 backdrop-blur-md text-white text-[10px] px-2 py-0.5 rounded border border-zinc-700">
@@ -253,7 +253,7 @@ export default function CaseStudies({ onOpenBooking }) {
                 <div className="text-[11px] text-zinc-500 tracking-wider mb-1 font-bold">
                   {study.tag}
                 </div>
-                <h4 className="text-lg font-bold font-display text-zinc-900 group-hover:text-amber-800 transition-colors">
+                <h4 className="text-lg font-bold font-display text-zinc-900 group-hover:text-zinc-900 transition-colors">
                   {study.title}
                 </h4>
                 <p className="text-xs text-zinc-600 mt-1 line-clamp-2">
@@ -263,7 +263,7 @@ export default function CaseStudies({ onOpenBooking }) {
 
               <div className="flex items-center justify-between mt-4 pt-3 border-t border-zinc-100">
                 <div className="text-xs text-zinc-500 font-bold">النتيجة المحققة</div>
-                <div className="text-sm font-bold text-amber-700 font-display">{study.revenue}</div>
+                <div className="text-sm font-bold text-zinc-800 font-display">{study.revenue}</div>
               </div>
             </div>
           ))}
@@ -281,8 +281,8 @@ export default function CaseStudies({ onOpenBooking }) {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="flex items-center gap-2 text-xs font-mono uppercase text-amber-800 mb-2 font-bold">
-              <Sparkles className="w-4 h-4 text-amber-600" />
+            <div className="flex items-center gap-2 text-xs font-mono uppercase text-zinc-900 mb-2 font-bold">
+              <Sparkles className="w-4 h-4 text-zinc-700" />
               أصول وتصاميم المشروع: {selectedCase.client}
             </div>
 
@@ -311,7 +311,7 @@ export default function CaseStudies({ onOpenBooking }) {
                   setModalOpen(false);
                   onOpenBooking();
                 }}
-                className="px-6 py-2.5 rounded-full text-xs font-bold bg-gold-gradient text-white cursor-pointer flex items-center gap-2"
+                className="px-6 py-2.5 rounded-full text-xs font-bold bg-zinc-950 text-white cursor-pointer flex items-center gap-2"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
                 <span>احجز مكالمة استشارية لمشروعك</span>

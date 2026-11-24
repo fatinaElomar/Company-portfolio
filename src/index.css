@@ -31,7 +31,7 @@
   }
 }
 
-/* Custom Scrollbar in Minimalist Sharp Gold */
+/* Custom Scrollbar in Minimalist Sharp Monochrome */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -42,7 +42,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
+  background: #27272A;
 }
 
 /* Hide scrollbar for clean horizontal swiping on mobile */
@@ -54,9 +54,15 @@
   scrollbar-width: none;
 }
 
-/* Luxury Metallic Gold Text Gradient */
+/* Monochrome Text & Background Classes */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #8C6408 0%, #C59B27 50%, #8C6408 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #09090B !important;
+}
+
+.bg-gold-gradient {
+  background: #09090B !important;
+  color: #FFFFFF !important;
+}
+.bg-gold-gradient:hover {
+  background: #27272A !important;
 }

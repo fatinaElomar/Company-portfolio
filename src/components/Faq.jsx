@@ -35,12 +35,12 @@ export default function Faq({ onOpenBooking }) {
     <section id="faq" className="py-24 bg-zinc-50 border-t border-zinc-200 relative overflow-hidden text-right">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-widest mb-3">
-            <HelpCircle className="w-3.5 h-3.5 text-amber-600" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-900 text-xs font-bold uppercase tracking-widest mb-3">
+            <HelpCircle className="w-3.5 h-3.5 text-zinc-700" />
             إجابات واضحة ومباشرة
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl leading-snug font-display font-extrabold text-zinc-950 tracking-tight mb-4">
-            الأسئلة <span className="text-gold-gradient">الأكثر شيوعاً</span>
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-zinc-950 mb-3 font-display font-extrabold text-zinc-950 tracking-tight mb-4">
+            الأسئلة <span className="text-zinc-950">الأكثر شيوعاً</span>
           </h2>
           <p className="text-base text-zinc-600 max-w-xl mx-auto font-normal">
             كل ما تحتاج لمعرفته حول شراكتك مع ميديا ماينيد في إدارة السوشيال ميديا، البراندنج الفاخر، التغليف، وتطوير متاجر شوبيفاي.
@@ -64,7 +64,7 @@ export default function Faq({ onOpenBooking }) {
                   </span>
                   <div
                     className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'bg-amber-100 border-amber-300 text-amber-800 rotate-180' : 'bg-zinc-100 border-zinc-200 text-zinc-500'
+                      isOpen ? 'bg-zinc-200 border-zinc-400 text-zinc-900 rotate-180' : 'bg-zinc-100 border-zinc-200 text-zinc-500'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -89,7 +89,7 @@ export default function Faq({ onOpenBooking }) {
           </div>
           <button
             onClick={onOpenBooking}
-            className="px-6 py-2.5 rounded-full text-xs font-bold text-white bg-gold-gradient transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer"
+            className="px-6 py-2.5 rounded-full text-xs font-bold text-white bg-zinc-950 transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer"
           >
             <PhoneCall className="w-3.5 h-3.5" />
             <span>احجز مكالمة استشارية</span>

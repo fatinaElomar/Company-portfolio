@@ -38,13 +38,13 @@ export default function ContactModal({ isOpen, onClose }) {
 
         {!submitted ? (
           <div>
-            <div className="flex items-center gap-2 mb-2 text-amber-800 text-xs font-mono uppercase tracking-widest font-bold">
-              <Sparkles className="w-4 h-4 text-amber-600" />
+            <div className="flex items-center gap-2 mb-2 text-zinc-900 text-xs font-mono uppercase tracking-widest font-bold">
+              <Sparkles className="w-4 h-4 text-zinc-700" />
               مقراتنا الإقليمية في لبنان والإمارات
             </div>
 
             <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-zinc-950 mb-2">
-              احجز <span className="text-gold-gradient">مكالمتك الاستشارية</span>
+              احجز <span className="text-zinc-950">مكالمتك الاستشارية</span>
             </h3>
             
             <p className="text-zinc-600 text-xs sm:text-sm mb-6 leading-relaxed">
@@ -63,7 +63,7 @@ export default function ContactModal({ isOpen, onClose }) {
                     placeholder="مثال: عمر الأحمد"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm"
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-black focus:outline-none text-zinc-900 text-sm"
                   />
                 </div>
 
@@ -77,7 +77,7 @@ export default function ContactModal({ isOpen, onClose }) {
                     placeholder="omar@brand.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm"
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-black focus:outline-none text-zinc-900 text-sm"
                   />
                 </div>
               </div>
@@ -93,7 +93,7 @@ export default function ContactModal({ isOpen, onClose }) {
                     placeholder="مثال: أورا لوكس أو رابط المتجر"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm"
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-black focus:outline-none text-zinc-900 text-sm"
                   />
                 </div>
 
@@ -104,7 +104,7 @@ export default function ContactModal({ isOpen, onClose }) {
                   <select
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm cursor-pointer font-medium"
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-black focus:outline-none text-zinc-900 text-sm cursor-pointer font-medium"
                   >
                     <option value="الإمارات العربية المتحدة (UAE)">الإمارات العربية المتحدة (UAE)</option>
                     <option value="لبنان (Lebanon)">لبنان (Lebanon)</option>
@@ -123,7 +123,7 @@ export default function ContactModal({ isOpen, onClose }) {
                   <select
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm cursor-pointer font-medium"
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-black focus:outline-none text-zinc-900 text-sm cursor-pointer font-medium"
                   >
                     <option value="إدارة صفحات السوشيال ميديا للشركات">إدارة صفحات السوشيال ميديا للشركات</option>
                     <option value="الهوية البصرية والبراندنج الفاخر">الهوية البصرية والبراندنج الفاخر</option>
@@ -140,7 +140,7 @@ export default function ContactModal({ isOpen, onClose }) {
                   <select
                     value={formData.projectScope}
                     onChange={(e) => setFormData({ ...formData, projectScope: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm cursor-pointer font-medium"
+                    className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-black focus:outline-none text-zinc-900 text-sm cursor-pointer font-medium"
                   >
                     <option value="مشروع تأسيسي / انطلاقة جديدة">مشروع تأسيسي / انطلاقة جديدة</option>
                     <option value="تطوير ونمو علامة تجارية قائمة">تطوير ونمو علامة تجارية قائمة</option>
@@ -159,14 +159,14 @@ export default function ContactModal({ isOpen, onClose }) {
                   placeholder="أخبرنا باختصار عن موعد الإطلاق المستهدف وما الذي تود من فريقنا إنجازه..."
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full px-4 py-2 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm resize-none"
+                  className="w-full px-4 py-2 rounded-none bg-zinc-50 border border-zinc-200 focus:border-black focus:outline-none text-zinc-900 text-sm resize-none"
                 ></textarea>
               </div>
 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-none font-bold text-sm bg-gold-gradient text-white flex items-center justify-center gap-2-gold-glow hover:shadow-gold-glow-lg transition-all cursor-pointer"
+                  className="w-full py-4 rounded-none font-bold text-sm bg-zinc-950 text-white flex items-center justify-center gap-2-gold-glow hover:shadow-gold-glow-lg transition-all cursor-pointer"
                 >
                   <PhoneCall className="w-4 h-4" />
                   <span>تأكيد طلب حجز المكالمة الاستشارية</span>
@@ -179,7 +179,7 @@ export default function ContactModal({ isOpen, onClose }) {
                   <span>اتفاقية سرية معلومات مضمونة (NDA)</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5 text-amber-600" />
+                  <MapPin className="w-3.5 h-3.5 text-zinc-700" />
                   <span>مكاتبنا: دبي وبيروت</span>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export default function ContactModal({ isOpen, onClose }) {
 
             <button
               onClick={handleReset}
-              className="px-6 py-2.5 rounded-full text-xs font-bold bg-zinc-900 text-white hover:bg-gold-gradient mt-4 cursor-pointer"
+              className="px-6 py-2.5 rounded-full text-xs font-bold bg-zinc-900 text-white hover:bg-zinc-950 mt-4 cursor-pointer"
             >
               العودة إلى الموقع
             </button>
