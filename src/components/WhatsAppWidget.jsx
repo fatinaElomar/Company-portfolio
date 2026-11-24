@@ -18,7 +18,7 @@ export default function WhatsAppWidget() {
           </button>
           <div>
             <div className="font-bold text-zinc-900 flex items-center gap-1.5 justify-end">
-              <span>استوديو ميديا ماينيد</span>
+              <span>استوديو MEDIAMIND</span>
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             </div>
             <div className="text-[11px] text-zinc-500 mt-0.5">

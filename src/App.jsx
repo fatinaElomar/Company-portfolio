@@ -51,7 +51,7 @@ export default function App() {
         <Testimonials />
 
         {/* Frequently Asked Questions (Devancy Inspired) */}
-        <Faq />
+        <Faq onOpenBooking={() => setBookingOpen(true)} />
       </main>
 
       {/* Footer with "Stay in the loop" newsletter */}
