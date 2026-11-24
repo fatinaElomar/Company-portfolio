@@ -8,7 +8,7 @@ export default function WhatsAppWidget() {
     <div className="fixed bottom-6 left-6 z-40 flex flex-col items-start text-right">
       {/* Tooltip greeting in Arabic */}
       {showTooltip && (
-        <div className="mb-2 bg-white border border-zinc-200 px-4 py-2.5 rounded-none text-xs text-zinc-800 max-w-xs flex items-start gap-2 animate-fade-in">
+        <div className="mb-2 bg-white border border-zinc-200 shadow-lg px-4 py-2.5 rounded-xl text-xs text-zinc-800 max-w-xs flex items-start gap-2 animate-fade-in">
           <button
             onClick={() => setShowTooltip(false)}
             className="text-zinc-400 hover:text-zinc-600 p-0.5 shrink-0"
@@ -18,7 +18,7 @@ export default function WhatsAppWidget() {
           </button>
           <div>
             <div className="font-bold text-zinc-900 flex items-center gap-1.5 justify-end">
-              <span>استوديو MEDIAMIND</span>
+              <span>Media Mind</span>
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             </div>
             <div className="text-[11px] text-zinc-500 mt-0.5">

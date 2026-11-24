@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, PhoneCall } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, PhoneCall } from 'lucide-react';
 import logoMark from '../assets/logo-black-mark.png';
 
 export default function Navbar({ onOpenBooking }) {
@@ -18,59 +18,54 @@ export default function Navbar({ onOpenBooking }) {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-zinc-200 py-3'
-          : 'bg-white/80 backdrop-blur-sm border-b border-zinc-100 py-4'
+          ? 'bg-white/95 backdrop-blur-md border-b border-zinc-200/80 shadow-sm py-3'
+          : 'bg-white border-b border-zinc-100 py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo with official MediaMind mark */}
-          <a href="#" className="flex items-center gap-3 group shrink-0">
+          
+          {/* Logo matching uploaded mockup: Burgundy MM mark + Media Mind */}
+          <a href="#" className="flex items-center gap-2.5 group shrink-0">
             <img
               src={logoMark}
-              alt="MEDIAMIND"
-              className="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              alt="Media Mind"
+              className="h-8 sm:h-9 w-auto object-contain logo-burgundy transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="flex flex-col text-right">
-              <span className="font-display font-black text-base sm:text-lg tracking-wider text-zinc-950 leading-tight">
-                MEDIAMIND
-              </span>
-              <span className="text-[10px] tracking-widest text-zinc-500 uppercase font-bold">
-                بيروت • دبي
-              </span>
+            <div className="flex items-center font-display font-bold text-lg sm:text-xl tracking-tight text-zinc-950">
+              <span>Media</span>
+              <span className="text-burgundy ml-1 mr-1">Mind</span>
             </div>
           </a>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-7 text-xs xl:text-sm font-bold text-zinc-700">
-            <a href="#services" className="hover:text-black transition-colors">
-              خدماتنا
+          {/* Desktop Nav Links matching mockup */}
+          <div className="hidden lg:flex items-center gap-8 text-xs font-semibold text-zinc-700">
+            <a href="#" className="text-zinc-950 font-bold border-b-2 border-zinc-950 pb-0.5">
+              الرئيسية (Home)
             </a>
-            <a href="#case-studies" className="hover:text-black transition-colors">
-              مشاريعنا
+            <div className="relative group/nav flex items-center gap-1 cursor-pointer hover:text-burgundy transition-colors">
+              <a href="#services">خدماتنا (Services)</a>
+              <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+            </div>
+            <a href="#portfolio" className="hover:text-burgundy transition-colors">
+              أعمالنا (Portfolio)
             </a>
-            <a href="#why-us" className="hover:text-black transition-colors">
-              لماذا نحن؟
+            <a href="#about" className="hover:text-burgundy transition-colors">
+              عن الوكالة (About)
             </a>
-            <a href="#reach" className="hover:text-black transition-colors">
-              نطاق انتشارنا
-            </a>
-            <a href="#testimonials" className="hover:text-black transition-colors">
-              آراء العملاء
-            </a>
-            <a href="#faq" className="hover:text-black transition-colors">
-              الأسئلة الشائعة
+            <a href="#contact" className="hover:text-burgundy transition-colors">
+              تواصل معنا (Contact)
             </a>
           </div>
 
-          {/* Single Desktop CTA: Book a call */}
-          <div className="hidden sm:flex items-center gap-4">
+          {/* Right Action Button matching mockup: Let's Talk > */}
+          <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={onOpenBooking}
-              className="px-5 py-2.5 rounded-none font-bold text-xs tracking-wider bg-zinc-950 hover:bg-black text-white transition-all duration-200 border border-zinc-950 flex items-center gap-2 cursor-pointer"
+              className="px-5 py-2.5 rounded-full font-bold text-xs tracking-wide bg-burgundy hover:bg-burgundy-hover text-white transition-all duration-200 flex items-center gap-1.5 shadow-sm hover:shadow group cursor-pointer"
             >
-              <PhoneCall className="w-3.5 h-3.5 text-zinc-300" />
-              <span>احجز مكالمة</span>
+              <span>احجز مكالمة (Let's Talk)</span>
+              <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5" />
             </button>
           </div>
 
@@ -78,15 +73,15 @@ export default function Navbar({ onOpenBooking }) {
           <div className="flex items-center gap-2 sm:hidden">
             <button
               onClick={onOpenBooking}
-              className="px-3 py-1.5 rounded-none font-bold text-[11px] bg-zinc-950 text-white flex items-center gap-1.5"
+              className="px-3.5 py-1.5 rounded-full font-bold text-[11px] bg-burgundy text-white flex items-center gap-1"
             >
-              <PhoneCall className="w-3 h-3" />
               <span>احجز</span>
+              <ChevronRight className="w-3 h-3 rtl:rotate-180" />
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-none text-zinc-700 hover:text-black hover:bg-zinc-100 transition-colors"
+              className="p-2 rounded-md text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100 transition-colors"
               aria-label="القائمة الرئيسية"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -99,46 +94,39 @@ export default function Navbar({ onOpenBooking }) {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-zinc-200 px-4 pt-3 pb-6 space-y-3 text-right animate-fade-in">
           <a
+            href="#"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-2 text-sm font-bold text-zinc-950 border-b border-zinc-100"
+          >
+            الرئيسية (Home)
+          </a>
+          <a
             href="#services"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-bold text-zinc-800 hover:text-black border-b border-zinc-100"
+            className="block py-2 text-sm font-bold text-zinc-700 hover:text-burgundy border-b border-zinc-100"
           >
-            خدماتنا
+            خدماتنا (Services)
           </a>
           <a
-            href="#case-studies"
+            href="#portfolio"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-bold text-zinc-800 hover:text-black border-b border-zinc-100"
+            className="block py-2 text-sm font-bold text-zinc-700 hover:text-burgundy border-b border-zinc-100"
           >
-            مشاريعنا
+            أعمالنا (Portfolio)
           </a>
           <a
-            href="#why-us"
+            href="#about"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-bold text-zinc-800 hover:text-black border-b border-zinc-100"
+            className="block py-2 text-sm font-bold text-zinc-700 hover:text-burgundy border-b border-zinc-100"
           >
-            لماذا نحن؟
+            عن الوكالة (About)
           </a>
           <a
-            href="#reach"
+            href="#contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-bold text-zinc-800 hover:text-black border-b border-zinc-100"
+            className="block py-2 text-sm font-bold text-zinc-700 hover:text-burgundy border-b border-zinc-100"
           >
-            نطاق انتشارنا
-          </a>
-          <a
-            href="#testimonials"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-bold text-zinc-800 hover:text-black border-b border-zinc-100"
-          >
-            آراء العملاء
-          </a>
-          <a
-            href="#faq"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-bold text-zinc-800 hover:text-black border-b border-zinc-100"
-          >
-            الأسئلة الشائعة
+            تواصل معنا (Contact)
           </a>
 
           <div className="pt-2">
@@ -147,10 +135,10 @@ export default function Navbar({ onOpenBooking }) {
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full py-3 rounded-none font-bold text-xs tracking-wider bg-zinc-950 text-white flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full py-3 rounded-full font-bold text-xs tracking-wider bg-burgundy text-white flex items-center justify-center gap-2 cursor-pointer shadow-sm"
             >
-              <PhoneCall className="w-3.5 h-3.5" />
-              <span>احجز مكالمة استشارية</span>
+              <span>احجز مكالمة استشارية (Let's Talk)</span>
+              <ChevronRight className="w-3.5 h-3.5 rtl:rotate-180" />
             </button>
           </div>
         </div>

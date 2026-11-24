@@ -11,58 +11,44 @@
 
   body {
     background-color: #FFFFFF;
-    color: #121214;
+    color: #111115;
     overflow-x: hidden;
     font-family: 'Cairo', system-ui, sans-serif;
     line-height: 1.6;
     letter-spacing: normal;
   }
 
-  /* Prevent awkward word breaking in Arabic */
   h1, h2, h3, h4, h5, h6 {
     word-break: normal;
     overflow-wrap: break-word;
     line-height: 1.35;
   }
-
-  /* Remove all shadows as requested */
-  *, ::before, ::after {
-    box-shadow: none !important;
-  }
 }
 
-/* Custom Scrollbar in Minimalist Sharp Monochrome */
+/* Custom Scrollbar in Burgundy */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F4F4F5;
+  background: #F3F4F6;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272A;
+  background: #7A1526;
+  border-radius: 9999px;
 }
 
-/* Hide scrollbar for clean horizontal swiping on mobile */
+/* Burgundy Logo Filter for Black Mark PNG */
+.logo-burgundy {
+  filter: invert(14%) sepia(85%) saturate(3800%) hue-rotate(338deg) brightness(85%) contrast(100%);
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-/* Monochrome Text & Background Classes */
-.text-gold-gradient {
-  color: #09090B !important;
-}
-
-.bg-gold-gradient {
-  background: #09090B !important;
-  color: #FFFFFF !important;
-}
-.bg-gold-gradient:hover {
-  background: #27272A !important;
 }
