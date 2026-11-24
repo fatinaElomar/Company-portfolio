@@ -44,7 +44,7 @@ export default function Process({ onOpenBooking }) {
             كيف تنفذ ميديا ماينيد <span className="text-gold-gradient">مشروعك خطوة بخطوة</span>
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-            منظومة عمل مجربة من 4 مراحل مصممة لنقل المتاجر والشركات من النتائج العشوائية إلى أرباح متراكمة وثابتة بملايين الدولارات.
+            منظومة عمل مجربة من 4 مراحل مصممة لنقل المتاجر والشركات من النتائج العشوائية إلى نمو متصاعد واستقرار تشغيلي مستمر.
           </p>
         </div>
 

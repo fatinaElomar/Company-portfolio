@@ -37,10 +37,10 @@ export default function StatsTicker() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 pt-8 border-t border-zinc-100 text-center">
           <div>
             <div className="text-3xl sm:text-4xl font-display font-black text-zinc-900 text-gold-gradient">
-              +48M$
+              +500K+
             </div>
             <div className="text-xs text-zinc-600 uppercase tracking-wider mt-1 font-bold">
-              مبيعات شوبيفاي محققة
+              طلب شراء ناجح لعملائنا
             </div>
           </div>
 

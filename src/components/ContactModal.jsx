@@ -9,7 +9,7 @@ export default function ContactModal({ isOpen, onClose }) {
     company: '',
     location: 'الإمارات العربية المتحدة (UAE)',
     projectType: 'إدارة صفحات السوشيال ميديا للشركات',
-    budget: '$2,500 - $5,000',
+    projectScope: 'تطوير ونمو علامة تجارية قائمة',
     notes: ''
   });
 
@@ -135,17 +135,17 @@ export default function ContactModal({ isOpen, onClose }) {
 
                 <div>
                   <label className="block text-xs font-bold text-zinc-700 mb-1.5">
-                    الميزانية التقديرية المرصودة
+                    نطاق وحجم المشروع المطلوب
                   </label>
                   <select
-                    value={formData.budget}
-                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                    value={formData.projectScope}
+                    onChange={(e) => setFormData({ ...formData, projectScope: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-none bg-zinc-50 border border-zinc-200 focus:border-amber-600 focus:outline-none text-zinc-900 text-sm cursor-pointer font-medium"
                   >
-                    <option value="$2,000 - $3,500">$2,000 - $3,500</option>
-                    <option value="$3,500 - $7,000">$3,500 - $7,000</option>
-                    <option value="$7,000 - $15,000+">$7,000 - $15,000+</option>
-                    <option value="مشروع مؤسسي / عقد شهري مستمر">مشروع مؤسسي / عقد شهري مستمر</option>
+                    <option value="مشروع تأسيسي / انطلاقة جديدة">مشروع تأسيسي / انطلاقة جديدة</option>
+                    <option value="تطوير ونمو علامة تجارية قائمة">تطوير ونمو علامة تجارية قائمة</option>
+                    <option value="توسع شامل وتغطية إقليمية كاملة">توسع شامل وتغطية إقليمية كاملة</option>
+                    <option value="شراكة استراتيجية / إدارة شهرية شاملة">شراكة استراتيجية / إدارة شهرية شاملة</option>
                   </select>
                 </div>
               </div>
