@@ -11,12 +11,22 @@ import { useLanguage } from '../context/LanguageContext';
 import { Parallax, Reveal } from './Motion';
 
 const SERVICE_ICONS = [Megaphone, PenTool, Box, Code, Gem];
+const SERVICES_BG_IMAGE =
+  'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2000&auto=format&fit=crop';
 
 export default function Services({ onOpenBooking }) {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="relative py-20 bg-black border-y border-zinc-900 text-center overflow-hidden">
+    <section
+      id="services"
+      className="relative py-24 bg-black border-y border-zinc-900 text-center overflow-hidden bg-cover bg-center bg-fixed"
+      style={{ backgroundImage: `url(${SERVICES_BG_IMAGE})` }}
+    >
+      {/* Dark + Burgundy Gradient Overlays over Fixed Background Image */}
+      <div className="absolute inset-0 bg-black/80 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-zinc-950/60 to-burgundy/40 pointer-events-none"></div>
+
       {/* Burgundy Ambient Glow with Scroll Parallax */}
       <Parallax
         speed={-55}
@@ -40,7 +50,7 @@ export default function Services({ onOpenBooking }) {
             <span className="text-[#D93855]">{t.services.headingHighlight}</span>{' '}
             {t.services.headingSuffix}
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto leading-relaxed mb-12">
+          <p className="text-xs sm:text-sm text-zinc-300 max-w-xl mx-auto leading-relaxed mb-12">
             {t.services.subtitle}
           </p>
         </Reveal>
@@ -54,7 +64,7 @@ export default function Services({ onOpenBooking }) {
                 <Parallax speed={idx % 2 === 0 ? -10 : 10} className="h-full">
                   <div
                     onClick={onOpenBooking}
-                    className="h-full p-6 rounded-2xl bg-zinc-950 border border-zinc-800/90 hover:border-burgundy-accent hover:bg-zinc-900/90 hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-between group cursor-pointer text-center"
+                    className="h-full p-6 rounded-2xl bg-zinc-950/85 backdrop-blur-md border border-zinc-800/90 hover:border-burgundy-accent hover:bg-zinc-900/95 hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-between group cursor-pointer text-center"
                   >
                     <div className="flex flex-col items-center">
                       <div className="w-12 h-12 rounded-xl bg-burgundy/25 border border-burgundy/50 flex items-center justify-center text-[#E84A66] mb-5 group-hover:bg-burgundy group-hover:border-burgundy group-hover:text-white transition-colors duration-300">
@@ -65,7 +75,7 @@ export default function Services({ onOpenBooking }) {
                         {item.title}
                       </h3>
 
-                      <p className="text-[11px] text-zinc-400 leading-relaxed font-normal">
+                      <p className="text-[11px] text-zinc-300/90 leading-relaxed font-normal">
                         {item.desc}
                       </p>
                     </div>

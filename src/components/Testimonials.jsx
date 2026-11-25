@@ -1,71 +1,89 @@
 import React from 'react';
-import { clientReviews } from '../data/portfolioData';
 import { Star, Quote, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { Parallax, Reveal } from './Motion';
 
 export default function Testimonials() {
+  const { t } = useLanguage();
+
   return (
-    <section id="testimonials" className="py-24 bg-zinc-50 border-t border-zinc-200 relative text-right">
+    <section id="testimonials" className="py-20 bg-white border-t border-zinc-200/80 relative text-start overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-900 text-xs font-bold uppercase tracking-widest mb-3">
-            ماذا يقول عملاؤنا
+
+        {/* Header */}
+        <Reveal>
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <span className="w-8 h-[1.5px] bg-burgundy/60"></span>
+              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-burgundy font-bold">
+                {t.testimonials.tag}
+              </span>
+              <span className="w-8 h-[1.5px] bg-burgundy/60"></span>
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-zinc-950 tracking-tight mb-2">
+              {t.testimonials.headingPrefix}{' '}
+              <span className="text-burgundy">{t.testimonials.headingHighlight}</span>
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed">
+              {t.testimonials.subtitle}
+            </p>
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-zinc-950 mb-3 font-display font-extrabold text-zinc-950 tracking-tight mb-4">
-            شهادات نعتز بها من <span className="text-zinc-950">مؤسسي الشركات والمتاجر</span>
-          </h2>
-          <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-            اكتشف آراء رواد الأعمال ومديري الماركات الذين وسعوا نطاق أعمالهم مع ميديا ماينيد في لبنان والإمارات ودول الخليج.
-          </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {clientReviews.map((review, idx) => (
-            <div
-              key={idx}
-              className="rounded-none bg-white p-6 sm:p-8 border border-zinc-200 hover:border-zinc-900 transition-all duration-300 flex flex-col justify-between group relative text-right"
-            >
-              <div className="absolute top-6 left-6 text-amber-200/60 group-hover:text-amber-300 transition-colors">
-                <Quote className="w-8 h-8" />
-              </div>
+        {/* 3 Testimonial Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {t.testimonials.items.map((review, idx) => (
+            <Reveal key={idx} delay={idx * 90} className="h-full">
+              <Parallax speed={idx === 1 ? -14 : 10} className="h-full">
+                <div className="h-full rounded-2xl bg-zinc-50/70 p-6 sm:p-7 border border-zinc-200/90 hover:border-burgundy hover:bg-white hover:shadow-lg transition-all duration-300 flex flex-col justify-between group relative text-start">
+                  {/* Decorative Quote Icon */}
+                  <div className="absolute top-5 end-5 text-burgundy/15 group-hover:text-burgundy/30 transition-colors pointer-events-none">
+                    <Quote className="w-8 h-8" />
+                  </div>
 
-              <div>
-                {/* 5 Stars */}
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-zinc-900 text-zinc-600" />
-                  ))}
-                  <span className="text-[11px] font-mono text-zinc-500 mr-2 font-bold">5.0 عميل موثق</span>
-                </div>
-
-                <p className="text-zinc-700 text-sm leading-relaxed mb-6 italic">
-                  "{review.quote}"
-                </p>
-              </div>
-
-              <div className="pt-6 border-t border-zinc-100 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img
-                    src={review.avatar}
-                    alt={review.author}
-                    className="w-11 h-11 rounded-full object-cover border border-zinc-400"
-                  />
                   <div>
-                    <div className="text-sm font-bold text-zinc-900 flex items-center gap-1.5">
-                      {review.author}
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                    {/* 5 Burgundy Stars */}
+                    <div className="flex items-center gap-1 mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-burgundy text-burgundy" />
+                      ))}
+                      <span className="text-[11px] font-mono text-zinc-500 ms-2 font-bold">
+                        {t.testimonials.verifiedLabel}
+                      </span>
                     </div>
-                    <div className="text-xs text-zinc-500">{review.role}</div>
-                    <div className="text-[11px] text-zinc-900 font-bold">{review.company}</div>
+
+                    <p className="text-zinc-700 text-xs sm:text-sm leading-relaxed mb-6">
+                      "{review.quote}"
+                    </p>
+                  </div>
+
+                  <div className="pt-5 border-t border-zinc-200/70 flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <img
+                        src={review.avatar}
+                        alt={review.author}
+                        className="w-11 h-11 rounded-full object-cover border border-burgundy/30 shrink-0"
+                      />
+                      <div className="min-w-0">
+                        <div className="text-xs sm:text-sm font-bold text-zinc-950 flex items-center gap-1.5">
+                          <span className="truncate">{review.author}</span>
+                          <CheckCircle2 className="w-3.5 h-3.5 text-burgundy shrink-0" />
+                        </div>
+                        <div className="text-[11px] text-zinc-500 truncate">{review.role}</div>
+                        <div className="text-[11px] text-zinc-900 font-bold truncate">{review.company}</div>
+                      </div>
+                    </div>
+
+                    <div className="shrink-0">
+                      <span className="inline-block text-[10px] tracking-wide text-burgundy bg-burgundy-light px-2.5 py-1 rounded-full border border-burgundy/20 font-bold">
+                        {review.metric}
+                      </span>
+                    </div>
                   </div>
                 </div>
-
-                <div className="text-left">
-                  <span className="text-[10px] uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 font-bold">
-                    {review.metric}
-                  </span>
-                </div>
-              </div>
-            </div>
+              </Parallax>
+            </Reveal>
           ))}
         </div>
       </div>
