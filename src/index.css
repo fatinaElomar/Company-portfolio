@@ -18,6 +18,10 @@
     letter-spacing: normal;
   }
 
+  html[lang="en"] body {
+    font-family: 'Plus Jakarta Sans', 'Cairo', system-ui, sans-serif;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     word-break: normal;
     overflow-wrap: break-word;
