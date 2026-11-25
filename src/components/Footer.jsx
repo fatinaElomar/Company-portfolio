@@ -3,7 +3,7 @@ import { Instagram, Youtube, Linkedin } from 'lucide-react';
 import logoMark from '../assets/logo-black-mark.png';
 import { useLanguage } from '../context/LanguageContext';
 
-export default function Footer({ onOpenBooking }) {
+export default function Footer({ onNavigateHome, onNavigateGallery, onOpenBooking }) {
   const { t } = useLanguage();
 
   return (
@@ -13,7 +13,14 @@ export default function Footer({ onOpenBooking }) {
         {/* Main Footer Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-zinc-800/80">
           {/* Brand Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigateHome(null);
+            }}
+            className="flex items-center gap-2.5 group"
+          >
             <img
               src={logoMark}
               alt="Media Mind"
@@ -27,16 +34,64 @@ export default function Footer({ onOpenBooking }) {
 
           {/* Nav Links */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-zinc-300 font-medium">
-            <a href="#" className="hover:text-white transition-colors">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateHome(null);
+              }}
+              className="hover:text-white transition-colors"
+            >
               {t.nav.home}
             </a>
-            <a href="#services" className="hover:text-white transition-colors">
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateHome('services');
+              }}
+              className="hover:text-white transition-colors"
+            >
               {t.nav.services}
             </a>
-            <a href="#portfolio" className="hover:text-white transition-colors">
+            <a
+              href="#best-projects"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateHome('best-projects');
+              }}
+              className="hover:text-white transition-colors"
+            >
+              {t.nav.bestProjects}
+            </a>
+            <a
+              href="#portfolio"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateHome('portfolio');
+              }}
+              className="hover:text-white transition-colors"
+            >
               {t.nav.portfolio}
             </a>
-            <a href="#about" className="hover:text-white transition-colors">
+            <a
+              href="#/gallery"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateGallery();
+              }}
+              className="hover:text-white transition-colors"
+            >
+              {t.nav.gallery}
+            </a>
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateHome('about');
+              }}
+              className="hover:text-white transition-colors"
+            >
               {t.nav.about}
             </a>
             <button onClick={onOpenBooking} className="hover:text-white transition-colors cursor-pointer">

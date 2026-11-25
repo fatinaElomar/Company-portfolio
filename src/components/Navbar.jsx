@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown, ChevronRight, Globe } from 'lucide-react';
 import logoMark from '../assets/logo-black-mark.png';
 import { useLanguage } from '../context/LanguageContext';
 
-export default function Navbar({ onOpenBooking }) {
+export default function Navbar({ currentPage, onNavigateHome, onNavigateGallery, onOpenBooking }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
@@ -16,6 +16,18 @@ export default function Navbar({ onOpenBooking }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleSectionLink = (e, sectionId) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    onNavigateHome(sectionId);
+  };
+
+  const handleGalleryClick = (e) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    onNavigateGallery();
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -26,8 +38,12 @@ export default function Navbar({ onOpenBooking }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo: Burgundy MM mark + Media Mind */}
-          <a href="#" className="flex items-center gap-2.5 group shrink-0">
+          {/* Logo */}
+          <a
+            href="#"
+            onClick={(e) => handleSectionLink(e, null)}
+            className="flex items-center gap-2.5 group shrink-0"
+          >
             <img
               src={logoMark}
               alt="Media Mind"
@@ -40,28 +56,67 @@ export default function Navbar({ onOpenBooking }) {
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-8 text-xs font-semibold text-zinc-700">
-            <a href="#" className="text-zinc-950 font-bold border-b-2 border-zinc-950 pb-0.5">
+          <div className="hidden lg:flex items-center gap-7 text-xs font-semibold text-zinc-700">
+            <a
+              href="#"
+              onClick={(e) => handleSectionLink(e, null)}
+              className={
+                currentPage === 'home'
+                  ? 'text-zinc-950 font-bold border-b-2 border-zinc-950 pb-0.5'
+                  : 'hover:text-burgundy transition-colors'
+              }
+            >
               {t.nav.home}
             </a>
             <div className="relative group/nav flex items-center gap-1 cursor-pointer hover:text-burgundy transition-colors">
-              <a href="#services">{t.nav.services}</a>
+              <a href="#services" onClick={(e) => handleSectionLink(e, 'services')}>
+                {t.nav.services}
+              </a>
               <ChevronDown className="w-3.5 h-3.5 opacity-60" />
             </div>
-            <a href="#portfolio" className="hover:text-burgundy transition-colors">
+            <a
+              href="#best-projects"
+              onClick={(e) => handleSectionLink(e, 'best-projects')}
+              className="hover:text-burgundy transition-colors"
+            >
+              {t.nav.bestProjects}
+            </a>
+            <a
+              href="#portfolio"
+              onClick={(e) => handleSectionLink(e, 'portfolio')}
+              className="hover:text-burgundy transition-colors"
+            >
               {t.nav.portfolio}
             </a>
-            <a href="#about" className="hover:text-burgundy transition-colors">
+            <a
+              href="#/gallery"
+              onClick={handleGalleryClick}
+              className={
+                currentPage === 'gallery'
+                  ? 'text-burgundy font-bold border-b-2 border-burgundy pb-0.5'
+                  : 'hover:text-burgundy transition-colors'
+              }
+            >
+              {t.nav.gallery}
+            </a>
+            <a
+              href="#about"
+              onClick={(e) => handleSectionLink(e, 'about')}
+              className="hover:text-burgundy transition-colors"
+            >
               {t.nav.about}
             </a>
-            <a href="#contact" className="hover:text-burgundy transition-colors">
+            <a
+              href="#contact"
+              onClick={(e) => handleSectionLink(e, 'contact')}
+              className="hover:text-burgundy transition-colors"
+            >
               {t.nav.contact}
             </a>
           </div>
 
           {/* Right Controls: AR/EN Switcher + Let's Talk CTA */}
           <div className="hidden sm:flex items-center gap-3">
-            {/* Language Switcher Pill */}
             <div
               className="inline-flex items-center rounded-full bg-zinc-100 border border-zinc-200 p-0.5 text-[11px] font-bold"
               role="group"
@@ -103,7 +158,6 @@ export default function Navbar({ onOpenBooking }) {
 
           {/* Mobile Controls */}
           <div className="flex items-center gap-2 sm:hidden">
-            {/* Compact Mobile AR/EN toggle */}
             <button
               type="button"
               onClick={() => setLang(lang === 'ar' ? 'en' : 'ar')}
@@ -138,35 +192,49 @@ export default function Navbar({ onOpenBooking }) {
         <div className="lg:hidden bg-white border-b border-zinc-200 px-4 pt-3 pb-6 space-y-3 text-start animate-fade-in">
           <a
             href="#"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleSectionLink(e, null)}
             className="block py-2 text-sm font-bold text-zinc-950 border-b border-zinc-100"
           >
             {t.nav.home}
           </a>
           <a
             href="#services"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleSectionLink(e, 'services')}
             className="block py-2 text-sm font-bold text-zinc-700 hover:text-burgundy border-b border-zinc-100"
           >
             {t.nav.services}
           </a>
           <a
+            href="#best-projects"
+            onClick={(e) => handleSectionLink(e, 'best-projects')}
+            className="block py-2 text-sm font-bold text-zinc-700 hover:text-burgundy border-b border-zinc-100"
+          >
+            {t.nav.bestProjects}
+          </a>
+          <a
             href="#portfolio"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleSectionLink(e, 'portfolio')}
             className="block py-2 text-sm font-bold text-zinc-700 hover:text-burgundy border-b border-zinc-100"
           >
             {t.nav.portfolio}
           </a>
           <a
+            href="#/gallery"
+            onClick={handleGalleryClick}
+            className="block py-2 text-sm font-bold text-burgundy border-b border-zinc-100"
+          >
+            {t.nav.gallery}
+          </a>
+          <a
             href="#about"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleSectionLink(e, 'about')}
             className="block py-2 text-sm font-bold text-zinc-700 hover:text-burgundy border-b border-zinc-100"
           >
             {t.nav.about}
           </a>
           <a
             href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleSectionLink(e, 'contact')}
             className="block py-2 text-sm font-bold text-zinc-700 hover:text-burgundy border-b border-zinc-100"
           >
             {t.nav.contact}

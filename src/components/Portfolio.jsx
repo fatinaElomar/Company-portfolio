@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { ChevronRight, Eye, PhoneCall, X } from 'lucide-react';
+import { ChevronRight, Eye, PhoneCall, X, ExternalLink, Instagram } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { PORTFOLIO_PROJECTS } from '../data/projectsData';
 import { Parallax, Reveal } from './Motion';
 
-export default function Portfolio({ onOpenBooking }) {
+export default function Portfolio({ onOpenBooking, onOpenGallery }) {
   const [activeProjectId, setActiveProjectId] = useState(null);
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
-  const activeModal = t.portfolio.projects.find((p) => p.id === activeProjectId) || null;
+  const activeModal = PORTFOLIO_PROJECTS.find((p) => p.id === activeProjectId) || null;
 
   return (
     <section id="portfolio" className="py-20 bg-zinc-50/50 border-t border-zinc-200/80 text-start overflow-hidden">
@@ -34,7 +35,7 @@ export default function Portfolio({ onOpenBooking }) {
             </div>
 
             <button
-              onClick={onOpenBooking}
+              onClick={onOpenGallery}
               className="self-start md:self-auto px-5 py-2 rounded-full border border-burgundy text-burgundy hover:bg-burgundy hover:text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
             >
               <span>{t.portfolio.viewAll}</span>
@@ -43,45 +44,81 @@ export default function Portfolio({ onOpenBooking }) {
           </div>
         </Reveal>
 
-        {/* 5 Project Thumbnails Grid with staggered reveal & depth parallax */}
+        {/* 5 Project Thumbnails Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {t.portfolio.projects.map((project, idx) => (
-            <Reveal key={project.id} delay={idx * 80} className="h-full">
-              <Parallax speed={idx % 2 === 0 ? -10 : 10} className="h-full">
-                <div
-                  onClick={() => setActiveProjectId(project.id)}
-                  className="h-full group relative rounded-2xl overflow-hidden bg-white border border-zinc-200/90 hover:border-burgundy hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col justify-between"
-                >
-                  <div className="aspect-[4/3] w-full overflow-hidden relative bg-zinc-900">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <div className="w-9 h-9 rounded-full bg-white/90 text-burgundy flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                        <Eye className="w-4 h-4" />
+          {PORTFOLIO_PROJECTS.map((project, idx) => {
+            const copy = project[lang];
+            const isInsta = project.linkType === 'instagram';
+
+            return (
+              <Reveal key={project.id} delay={idx * 80} className="h-full">
+                <Parallax speed={idx % 2 === 0 ? -10 : 10} className="h-full">
+                  <div className="h-full group relative rounded-2xl overflow-hidden bg-white border border-zinc-200/90 hover:border-burgundy hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                    <div className="aspect-[4/3] w-full overflow-hidden relative bg-zinc-900">
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full h-full"
+                      >
+                        <img
+                          src={project.image}
+                          alt={copy.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </a>
+
+                      {/* Quick Lightbox Trigger */}
+                      <button
+                        type="button"
+                        onClick={() => setActiveProjectId(project.id)}
+                        aria-label={copy.title}
+                        className="absolute top-2 end-2 w-8 h-8 rounded-full bg-white/90 hover:bg-burgundy text-zinc-900 hover:text-white flex items-center justify-center shadow-md transition-colors cursor-pointer"
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                      </button>
+
+                      <div className="absolute top-2 start-2 px-2 py-0.5 rounded bg-black/70 backdrop-blur-sm text-[10px] text-white font-mono">
+                        {copy.category}
                       </div>
                     </div>
-                    <div className="absolute top-2 start-2 px-2 py-0.5 rounded bg-black/70 backdrop-blur-sm text-[10px] text-white font-mono">
-                      {project.category}
-                    </div>
-                  </div>
 
-                  <div className="p-3.5 text-start flex-1 flex flex-col justify-between">
-                    <div>
-                      <h4 className="font-display font-bold text-xs sm:text-sm text-zinc-950 group-hover:text-burgundy transition-colors line-clamp-1">
-                        {project.title}
-                      </h4>
-                      <p className="text-[11px] text-zinc-500 mt-1 line-clamp-2 leading-relaxed">
-                        {project.desc}
-                      </p>
+                    <div className="p-3.5 text-start flex-1 flex flex-col justify-between gap-3">
+                      <div>
+                        <h4 className="font-display font-bold text-xs sm:text-sm text-zinc-950 group-hover:text-burgundy transition-colors line-clamp-1">
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                          >
+                            {copy.title}
+                          </a>
+                        </h4>
+                        <p className="text-[11px] text-zinc-500 mt-1 line-clamp-2 leading-relaxed">
+                          {copy.desc}
+                        </p>
+                      </div>
+
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="pt-2 border-t border-zinc-100 inline-flex items-center gap-1.5 text-[11px] font-bold text-burgundy hover:text-burgundy-hover transition-colors"
+                      >
+                        {isInsta ? (
+                          <Instagram className="w-3.5 h-3.5" />
+                        ) : (
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        )}
+                        <span>{copy.linkLabel}</span>
+                      </a>
                     </div>
                   </div>
-                </div>
-              </Parallax>
-            </Reveal>
-          ))}
+                </Parallax>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
 
@@ -98,24 +135,44 @@ export default function Portfolio({ onOpenBooking }) {
             </button>
 
             <span className="text-xs font-mono uppercase text-burgundy font-bold block mb-1">
-              {activeModal.category}
+              {activeModal[lang].category}
             </span>
             <h3 className="text-xl font-display font-bold text-zinc-950 mb-4">
-              {activeModal.title}
+              {activeModal[lang].title}
             </h3>
 
-            <div className="rounded-xl overflow-hidden aspect-[16/10] mb-4 border border-zinc-200">
-              <img src={activeModal.image} alt={activeModal.title} className="w-full h-full object-cover" />
-            </div>
+            <a
+              href={activeModal.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-xl overflow-hidden aspect-[16/10] mb-4 border border-zinc-200 group"
+            >
+              <img
+                src={activeModal.image}
+                alt={activeModal[lang].title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </a>
 
             <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-5">
-              {activeModal.desc}
+              {activeModal[lang].desc}
             </p>
 
-            <div className="flex items-center justify-between gap-3 pt-3 border-t border-zinc-100">
-              <div className="text-xs text-zinc-500 font-bold">
-                {t.portfolio.modalPrompt}
-              </div>
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-zinc-100">
+              <a
+                href={activeModal.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-full text-xs font-bold border border-burgundy text-burgundy hover:bg-burgundy hover:text-white inline-flex items-center gap-1.5 transition-all"
+              >
+                {activeModal.linkType === 'instagram' ? (
+                  <Instagram className="w-3.5 h-3.5" />
+                ) : (
+                  <ExternalLink className="w-3.5 h-3.5" />
+                )}
+                <span>{activeModal[lang].linkLabel}</span>
+              </a>
+
               <button
                 onClick={() => {
                   setActiveProjectId(null);

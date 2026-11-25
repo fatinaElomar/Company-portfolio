@@ -1,0 +1,257 @@
+/**
+ * Centralized Projects & Gallery Data
+ * Replace the placeholder `liveUrl`, `image`, and text fields below with your own client websites and Instagram pages.
+ */
+
+export const BEST_PROJECTS = [
+  {
+    id: 'best-1',
+    categoryKey: 'branding',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop',
+    liveUrl: 'https://www.instagram.com/aesopskincare/',
+    linkType: 'instagram',
+    ar: {
+      category: 'الهوية البصرية والتغليف',
+      title: 'إعادة إطلاق هوية وتغليف العلامة الفاخرة',
+      client: 'علامة عناية فاخرة • دبي',
+      metric: '+310% نمو المبيعات',
+      desc: 'تصميم هوية بصرية كاملة، علب فاخرة بلمسة مخملية، وحملة إطلاق رقمية متكاملة على إنستغرام.',
+      linkLabel: 'شاهد على إنستغرام',
+    },
+    en: {
+      category: 'Branding & Packaging',
+      title: 'Luxury Skincare Rebrand & Unboxing System',
+      client: 'Boutique Skincare • Dubai',
+      metric: '+310% Sales Growth',
+      desc: 'Full brand identity overhaul, custom rigid gift packaging, and a high-impact Instagram launch campaign.',
+      linkLabel: 'View on Instagram',
+    },
+  },
+  {
+    id: 'best-2',
+    categoryKey: 'web',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
+    liveUrl: 'https://www.shopify.com/',
+    linkType: 'website',
+    ar: {
+      category: 'تطوير المتاجر والمواقع',
+      title: 'منصة تجارة إلكترونية فائقة السرعة',
+      client: 'متجر أزياء عصري • بيروت',
+      metric: '4.8% معدل التحويل',
+      desc: 'بناء متجر إلكتروني مخصص بالكامل مع تجربة تصفح سلسة وربط ذكي مع الحملات الإعلانية.',
+      linkLabel: 'زيارة الموقع المباشر',
+    },
+    en: {
+      category: 'Web & Shopify Store',
+      title: 'High-Converting Custom E-Commerce Flagship',
+      client: 'Modern Fashion Store • Beirut',
+      metric: '4.8% Conversion Rate',
+      desc: 'Custom Shopify storefront engineered for instant page loads, editorial product storytelling, and one-tap checkout.',
+      linkLabel: 'Visit Live Website',
+    },
+  },
+  {
+    id: 'best-3',
+    categoryKey: 'social',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200&auto=format&fit=crop',
+    liveUrl: 'https://www.instagram.com/glossier/',
+    linkType: 'instagram',
+    ar: {
+      category: 'إدارة السوشيال ميديا',
+      title: 'حملة ريلز وتفاعل شهرية متكاملة',
+      client: 'براند تجميل إقليمي • الخليج',
+      metric: '2.4M+ مشاهدات شهرية',
+      desc: 'إدارة كاملة للحسابات، إنتاج محتوى ريلز وتيك توك إبداعي، وبناء مجتمع تفاعلي متنامٍ.',
+      linkLabel: 'صفحة إنستغرام',
+    },
+    en: {
+      category: 'Social Media Growth',
+      title: 'Viral Reels & Social Community Engine',
+      client: 'Regional Beauty Brand • GCC',
+      metric: '2.4M+ Monthly Views',
+      desc: 'End-to-end social calendar, short-form Reels production, and conversion-driven creator storytelling.',
+      linkLabel: 'Open Instagram Page',
+    },
+  },
+];
+
+export const PORTFOLIO_PROJECTS = [
+  {
+    id: 1,
+    categoryKey: 'packaging',
+    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=800&auto=format&fit=crop',
+    liveUrl: 'https://www.instagram.com/aesopskincare/',
+    linkType: 'instagram',
+    ar: {
+      title: 'تصميم التغليف والعلب الفاخرة',
+      category: 'تصميم التغليف',
+      desc: 'تصميم علب تسوق كرتونية صلبة بلمسات فاخرة واللون البورغندي الملكي مع تجربة فتح فريدة.',
+      linkLabel: 'عرض على إنستغرام',
+    },
+    en: {
+      title: 'Luxury Packaging & Gift Boxes',
+      category: 'Packaging Design',
+      desc: 'Rigid luxury retail boxes finished in signature burgundy tones with an unforgettable unboxing flow.',
+      linkLabel: 'View on Instagram',
+    },
+  },
+  {
+    id: 2,
+    categoryKey: 'social',
+    image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800&auto=format&fit=crop',
+    liveUrl: 'https://www.instagram.com/glossier/',
+    linkType: 'instagram',
+    ar: {
+      title: 'حملات السوشيال ميديا وريلز',
+      category: 'السوشيال ميديا',
+      desc: 'إنتاج وتصوير ريلز وتيك توك جذابة، إدارة التفاعل اليومي وزيادة المتابعين والمبيعات.',
+      linkLabel: 'عرض على إنستغرام',
+    },
+    en: {
+      title: 'Viral Social Media Campaigns',
+      category: 'Social Media',
+      desc: 'High-retention Reels & TikTok production, community management, and conversion-focused growth campaigns.',
+      linkLabel: 'View on Instagram',
+    },
+  },
+  {
+    id: 3,
+    categoryKey: 'branding',
+    image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=800&auto=format&fit=crop',
+    liveUrl: 'https://www.behance.net/',
+    linkType: 'website',
+    ar: {
+      title: 'الهوية البصرية وبطاقات الأعمال',
+      category: 'الهوية البصرية',
+      desc: 'بناء الهوية البصرية الكاملة: الشعار، الخطوط، بطاقات الأعمال الفاخرة، ودليل العلامة.',
+      linkLabel: 'زيارة الموقع',
+    },
+    en: {
+      title: 'Minimalist Brand Identity',
+      category: 'Branding',
+      desc: 'Complete brand architecture including logo marks, typography systems, tactile stationery, and brand guidelines.',
+      linkLabel: 'Visit Live Site',
+    },
+  },
+  {
+    id: 4,
+    categoryKey: 'web',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop',
+    liveUrl: 'https://www.shopify.com/',
+    linkType: 'website',
+    ar: {
+      title: 'متاجر شوبيفاي وتطوير المواقع',
+      category: 'تطوير الويب',
+      desc: 'برمجة متجر شوبيفاي فائق السرعة بتصميم مخصص بالكامل وتجربة دفع سلسة بضغطة واحدة.',
+      linkLabel: 'زيارة الموقع',
+    },
+    en: {
+      title: 'Modern Shopify & Web Experience',
+      category: 'Web Development',
+      desc: 'Custom high-speed Shopify storefront engineered for seamless checkout and elevated brand storytelling.',
+      linkLabel: 'Visit Live Site',
+    },
+  },
+  {
+    id: 5,
+    categoryKey: 'packaging',
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800&auto=format&fit=crop',
+    liveUrl: 'https://www.instagram.com/nike/',
+    linkType: 'instagram',
+    ar: {
+      title: 'حقائب تسوق ملكية فاخرة',
+      category: 'المطبوعات والهوية',
+      desc: 'حقائب ورقية مقواة بحبال مخملية مجدولة وشعار Media Mind بارز باللون البورغندي والأسود.',
+      linkLabel: 'عرض على إنستغرام',
+    },
+    en: {
+      title: 'Bespoke Luxury Shopping Bags',
+      category: 'Print & Merch',
+      desc: 'Heavyweight matte boutique shopping bags with woven handles and embossed Media Mind emblems.',
+      linkLabel: 'View on Instagram',
+    },
+  },
+];
+
+export const GALLERY_ITEMS = [
+  ...PORTFOLIO_PROJECTS.map((p) => ({
+    ...p,
+    galleryId: `gal-${p.id}`,
+  })),
+  {
+    galleryId: 'gal-6',
+    categoryKey: 'branding',
+    image: 'https://images.unsplash.com/photo-1634942537034-2531766767d1?q=80&w=900&auto=format&fit=crop',
+    liveUrl: 'https://www.figma.com/',
+    linkType: 'website',
+    ar: {
+      title: 'نظام تصميم رقمي متكامل',
+      category: 'الهوية البصرية',
+      desc: 'تطوير منظومة بصرية متناسقة للمنصات الرقمية والهواتف الذكية بأعلى معايير الدقة.',
+      linkLabel: 'زيارة الموقع',
+    },
+    en: {
+      title: 'Digital Brand Design System',
+      category: 'Branding',
+      desc: 'Scalable visual identity guidelines across social templates, mobile interfaces, and campaign kits.',
+      linkLabel: 'Visit Live Site',
+    },
+  },
+  {
+    galleryId: 'gal-7',
+    categoryKey: 'social',
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=900&auto=format&fit=crop',
+    liveUrl: 'https://www.instagram.com/instagram/',
+    linkType: 'instagram',
+    ar: {
+      title: 'إدارة حسابات ومحتوى إبداعي',
+      category: 'السوشيال ميديا',
+      desc: 'تصوير منتجات احترافي وتخطيط شبكة محتوى جذابة ترفع من قوة الحضور الرقمي.',
+      linkLabel: 'عرض على إنستغرام',
+    },
+    en: {
+      title: 'Editorial Social Feed Curation',
+      category: 'Social Media',
+      desc: 'Art-directed photography and cohesive Instagram grid systems built to convert profile visitors.',
+      linkLabel: 'View on Instagram',
+    },
+  },
+  {
+    galleryId: 'gal-8',
+    categoryKey: 'web',
+    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=900&auto=format&fit=crop',
+    liveUrl: 'https://www.apple.com/',
+    linkType: 'website',
+    ar: {
+      title: 'موقع تعريفي تفاعلي للشركات',
+      category: 'تطوير الويب',
+      desc: 'تصميم وتطوير واجهات مواقع حديثة بحركات تمرير سلسة وتجربة مستخدم راقية.',
+      linkLabel: 'زيارة الموقع',
+    },
+    en: {
+      title: 'Interactive Corporate Web Showcase',
+      category: 'Web Development',
+      desc: 'Responsive flagship web experience featuring parallax storytelling and crisp typography.',
+      linkLabel: 'Visit Live Site',
+    },
+  },
+  {
+    galleryId: 'gal-9',
+    categoryKey: 'packaging',
+    image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=900&auto=format&fit=crop',
+    liveUrl: 'https://www.instagram.com/ritualscosmetics/',
+    linkType: 'instagram',
+    ar: {
+      title: 'تشكيلة علب الهدايا الموسمية',
+      category: 'تصميم التغليف',
+      desc: 'علب هدايا مخصصة للمواسم والأعياد بطباعة بارزة ولمسات بورغندي أنيقة.',
+      linkLabel: 'عرض على إنستغرام',
+    },
+    en: {
+      title: 'Seasonal Luxury Gift Box Series',
+      category: 'Packaging Design',
+      desc: 'Limited-edition seasonal packaging with embossed foil detailing and custom ribbon inserts.',
+      linkLabel: 'View on Instagram',
+    },
+  },
+];
